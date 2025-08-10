@@ -1,1 +1,5 @@
-<p>Coucou</p>
+<script>
+</script>
+
+<p>Accueil</p>
+

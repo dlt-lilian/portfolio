@@ -1,0 +1,37 @@
+{
+  "navbar": [
+    {
+      "label": "accueil",
+      "url": "/accueil",
+      "icon": "lucide:house"
+    },
+    {
+      "label": "portfolio",
+      "url": "/portfolio",
+      "icon": "lucide:code-xml"
+    },
+    {
+      "label": "contact",
+      "url": "/contact",
+      "icon": "lucide:message-circle"
+    }
+  ],
+  "footer": [
+    {
+      "label": "asd",
+      "url": "/accueil",
+      "icon": "lucide:house"
+    },
+    {
+      "label": "asd",
+      "url": "/portfolio",
+      "icon": "lucide:code-xml"
+    },
+    {
+      "label": "asd",
+      "url": "/contact",
+      "icon": "lucide:message-circle"
+    }
+  ]
+
+}
