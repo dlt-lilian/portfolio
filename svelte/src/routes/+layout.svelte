@@ -7,5 +7,9 @@
 </script>
 
 <Header />
-{@render children()}
+
+<div class="mx-100">
+    {@render children()}
+</div>
+
 <Footer />

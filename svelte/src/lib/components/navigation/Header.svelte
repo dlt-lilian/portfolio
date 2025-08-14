@@ -1,5 +1,5 @@
 <script>
-    import Button from "$lib/components/actions/Button.svelte";
+    import Button from "$lib/components/ui/actions/Button.svelte";
     import Data from "$lib/data/Navigation.json";
 </script>
 
