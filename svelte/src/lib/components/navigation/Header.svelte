@@ -1,16 +1,23 @@
 <script>
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Data from "$lib/data/Navigation.json";
+    import Themecontroller from "$lib/components/ui/actions/Themecontroller.svelte";
 </script>
 
-<div class="navbar flex justify-center space-x-4 py-4 shadow-md">
-    {#each Data.navbar as item}
-        <Button
-                link={item.url}
-                iconLeft={item.icon}
-                variant="ghost"
-        >
-            {item.label}
-        </Button>
-    {/each}
+<div class="navbar grid grid-cols-3 gap-4 shadow-md px-50">
+    <div class="col-start-2 flex justify-center">
+        {#each Data.navbar as item}
+            <Button
+                    link={item.url}
+                    iconLeft={item.icon}
+                    variant="ghost"
+            >
+                {item.label}
+            </Button>
+        {/each}
+    </div>
+    <div class="flex justify-end">
+        <Themecontroller />
+    </div>
+
 </div>

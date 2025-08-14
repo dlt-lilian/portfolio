@@ -2,7 +2,7 @@
   "navbar": [
     {
       "label": "accueil",
-      "url": "/accueil",
+      "url": "/",
       "icon": "lucide:house"
     },
     {
