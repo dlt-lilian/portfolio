@@ -2,7 +2,7 @@
     export let type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' = 'p';
     export let size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
     export let weight: 'light' | 'normal' | 'semibold' | 'bold' | 'black' = 'normal';
-    export let color: '' | 'primary' | 'success' | 'warning' | 'error' = '';
+    export let color: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
 
     const sizeClasses = {
         sm: 'text-sm',
@@ -21,6 +21,7 @@
 
     const colorClasses = {
         '': '',
+        'white': 'text-white',
         'primary': 'text-primary',
         'success': 'text-success',
         'warning': 'text-warning',
