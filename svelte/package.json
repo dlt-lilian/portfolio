@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "node build",
+		"start": "node build/index.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -41,7 +41,6 @@
 		"@storybook/addon-vitest": "^9.1.2",
 		"@storybook/sveltekit": "^9.1.2",
 		"@sveltejs/adapter-auto": "^6.1.0",
-		"@sveltejs/adapter-node": "^5.3.1",
 		"@sveltejs/kit": "^2.31.1",
 		"@sveltejs/vite-plugin-svelte": "^6.1.2",
 		"@tailwindcss/forms": "^0.5.10",
