@@ -8,7 +8,7 @@
 
 <Header />
 
-<div class="mx-100">
+<div class="mt-10 mb-10 min-h-screen max-w-6xl mx-auto">
     {@render children()}
 </div>
 

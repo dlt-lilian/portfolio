@@ -1,18 +1,23 @@
 {
   "header": {
-      "image": "https://picsum.photos/1920/1080",
-      "title": ["Lilian Dulot", "Développeur Javascript junior & Webdesigner"],
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
+    "image": "https://picsum.photos/1920/1080",
+    "title": [
+      "Lilian Dulot",
+      "Développeur Javascript junior & Webdesigner"
+    ],
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
   "portfolio": {
     "graphic": {
       "image": "https://picsum.photos/1920/1080",
       "title": "Projets graphiques",
+      "link": "/graphic",
       "label": "Voir plus"
     },
     "code": {
       "image": "https://picsum.photos/1920/1080",
       "title": "Projets code",
+      "link": "/code",
       "label": "Voir plus"
     }
   },
@@ -20,10 +25,79 @@
     "title": "Compétences"
   },
   "about": {
-    "title": "A propos",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "title": "À propos",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "image": "https://picsum.photos/1920/1080",
-    "label": "Voir mon CV"
+    "cv": {
+      "label": "Voir mon CV",
+      "link": "/cv.pdf"
+    },
+    "formation": {
+      "title": "Formation",
+      "scolaire": {
+        "title": "Cursus scolaire",
+        "items": [
+          {
+            "diplome": "Diplôme Webdesigner",
+            "etablissement": "FIM CCI Formation Saint-Lô",
+            "periode": "2024-2025",
+            "status": "obtenu"
+          },
+          {
+            "diplome": "BAC Professionnel Réseau Informatique & Système Communicant",
+            "etablissement": "Lycée Curie Corot Saint-Lô (2021) / Lycée Charles Tellier Condé-sur-Noireau",
+            "periode": "2022-2023",
+            "status": "obtenu"
+          }
+        ]
+      },
+      "personnelle": {
+        "title": "Apprentissage personnelle",
+        "items": [
+          {
+            "plateforme": "OpenClassrooms",
+            "type": "auto_formation"
+          },
+          {
+            "plateforme": "Codédex",
+            "type": "auto_formation"
+          },
+          {
+            "plateforme": "roadmap.sh",
+            "type": "auto_formation"
+          }
+        ]
+      }
+    },
+    "experience": {
+      "title": "Expérience professionnelle",
+      "alternance": [
+        {
+          "poste": "Maquettiste web & Développeur web",
+          "entreprise": "Mecaservicesshop",
+          "periode": "2024-2025",
+          "duree": "9 mois",
+          "type": "alternance",
+          "status": "termine"
+        }
+      ],
+      "stages": [
+        {
+          "poste": "Infographiste",
+          "entreprise": "Crédit Agricole Normandie",
+          "periode": "2024",
+          "duree": "4 mois",
+          "type": "stage"
+        },
+        {
+          "poste": "Maquettiste web",
+          "entreprise": "Altitude Création",
+          "periode": "2023",
+          "duree": "2 mois",
+          "type": "stage"
+        }
+      ]
+    }
   },
   "contact": {
     "title": "Contact"

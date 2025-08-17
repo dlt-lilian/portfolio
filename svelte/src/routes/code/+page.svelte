@@ -1,1 +1,1 @@
-<p>Code</p>
+<p>code</p>
