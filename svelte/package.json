@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "node build/index.js",
+		"start": "bun run build/index.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
