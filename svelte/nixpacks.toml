@@ -7,5 +7,5 @@ cmds = ['bun install --no-save']
 [phases.build]
 cmds = ['bun build']
 
-[start]
+[phases.start]
 cmds = ['bun start']
