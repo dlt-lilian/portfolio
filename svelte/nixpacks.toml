@@ -5,7 +5,7 @@ nixPkgs = ['nodejs_18', 'bun']
 cmds = ['bun install --no-save']
 
 [phases.build]
-cmds = ['bun run build']
+cmds = ['bun build']
 
 [start]
-cmd = 'bun start'
+cmds = ['bun start']
