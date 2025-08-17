@@ -3,14 +3,8 @@ import devtoolsJson from 'vite-plugin-devtools-json';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import adapter from '@sveltejs/adapter-node';
 
 export default defineConfig({
-	kit: {
-		adapter: adapter({
-			out: 'build'
-		})
-	},
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
