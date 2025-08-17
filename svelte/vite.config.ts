@@ -4,6 +4,13 @@ import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
+import adapter from "@sveltejs/adapter-auto";
+
+const config = {
+	kit: {
+		adapter: adapter()
+	}
+};
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
