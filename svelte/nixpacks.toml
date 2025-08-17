@@ -8,4 +8,4 @@ cmds = ['bun install --no-save']
 cmds = ['bun run build']
 
 [start]
-cmd = 'bun run start'
+cmd = 'bun start'
