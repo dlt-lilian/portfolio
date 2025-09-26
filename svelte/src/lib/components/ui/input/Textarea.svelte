@@ -28,7 +28,7 @@
     };
 
     $: classes = [
-        'textarea',
+        'textarea w-full',
         variantClasses[variant],
         sizeClasses[size]
     ]

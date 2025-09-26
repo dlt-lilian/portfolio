@@ -28,7 +28,7 @@
     };
 
     $: classes = [
-        'input',
+        'input w-full',
         variantClasses[variant],
         sizeClasses[size]
     ]

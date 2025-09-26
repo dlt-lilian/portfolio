@@ -29,8 +29,8 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "image": "https://picsum.photos/1920/1080",
     "cv": {
-      "label": "Voir mon CV",
-      "link": "/cv.pdf"
+      "label": "Télécharger mon CV",
+      "link": "/static/CV.pdf"
     },
     "formation": {
       "title": "Formation",
@@ -71,16 +71,6 @@
     },
     "experience": {
       "title": "Expérience professionnelle",
-      "alternance": [
-        {
-          "poste": "Maquettiste web & Développeur web",
-          "entreprise": "Mecaservicesshop",
-          "periode": "2024-2025",
-          "duree": "9 mois",
-          "type": "alternance",
-          "status": "termine"
-        }
-      ],
       "stages": [
         {
           "poste": "Infographiste",
@@ -95,6 +85,16 @@
           "periode": "2023",
           "duree": "2 mois",
           "type": "stage"
+        }
+      ],
+      "alternance": [
+        {
+          "poste": "Maquettiste web & Développeur web",
+          "entreprise": "Mecaservicesshop",
+          "periode": "2024-2025",
+          "duree": "9 mois",
+          "type": "alternance",
+          "status": "termine"
         }
       ]
     }

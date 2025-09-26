@@ -10,6 +10,7 @@
         | 'success'
         | 'warning'
         | 'error'
+        | 'link'
         | 'ghost' = 'primary';
     export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
     export let width: 'full' | 'col' | 'max' = 'max';
@@ -31,7 +32,8 @@
         success: 'btn-success',
         warning: 'btn-warning',
         error: 'btn-error',
-        ghost: 'btn-ghost'
+        ghost: 'btn-ghost',
+        link: 'btn-link p-0',
     };
 
     const sizeClasses: Record<typeof size, string> = {
