@@ -5,7 +5,7 @@
     import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
     import Input from "$lib/components/ui/input/Input.svelte";
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
-
+    
     import Test from "$lib/data/test.json" with { type:"json" };
     import Data from "$lib/data/Landing.json" with { type: "json" };
 </script>
@@ -15,7 +15,7 @@
     <!-- Header -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-            <Text type="h1" size="xl" weight="semibold">
+            <Text type="h1" size="xl" weight="semibold">-
                 {Data.header.title[0]}
             </Text>
 
