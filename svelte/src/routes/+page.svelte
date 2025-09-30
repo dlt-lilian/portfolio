@@ -2,10 +2,9 @@
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Text from "$lib/components/ui/Text.svelte";
     import Badge from "$lib/components/ui/actions/Badge.svelte";
-    import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
-    import Input from "$lib/components/ui/input/Input.svelte";
-    import Textarea from "$lib/components/ui/input/Textarea.svelte";
-    
+    import Contactform from "$lib/components/ui/form/Contactform.svelte";
+    import Hello from "$lib/emails/Hello.svelte"
+
     import Test from "$lib/data/test.json" with { type:"json" };
     import Data from "$lib/data/Landing.json" with { type: "json" };
 </script>
@@ -15,7 +14,7 @@
     <!-- Header -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-            <Text type="h1" size="xl" weight="semibold">-
+            <Text type="h1" size="xl" weight="semibold">
                 {Data.header.title[0]}
             </Text>
 
@@ -210,41 +209,7 @@
             Text a ajouter
         </Text>
 
-        <form class="grid grid-cols-1 space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-                <Fieldset legend="Nom">
-                    <Input placeholder="Coucou" required />
-                </Fieldset>
-
-                <Fieldset legend="Prénom">
-                    <Input placeholder="Coucou" required />
-                 </Fieldset>
-            </div>
-
-            <Fieldset legend="Adresse Email">
-                <Input placeholder="Coucou" type="email" required />
-            </Fieldset>
-
-            <Fieldset legend="Société">
-                <Input placeholder="Coucou" />
-            </Fieldset>
-
-            <Fieldset legend="Objet">
-                <Input placeholder="Coucou" required />
-             </Fieldset>
-
-            <Fieldset legend="Message">
-                <Textarea placeholder="Votre message" required />
-            </Fieldset>
-            <Button iconLeft="lucide:info" variant="link"
-                    link="/cgu">
-                <Text>
-                    En soumettant ce formulaire, j'accepte les conditions ...
-                </Text>
-            </Button>
-
-            <Button width="full" iconLeft="lucide:info"/>
-        </form>
+        <Contactform />
     </div>
 
 </div>
