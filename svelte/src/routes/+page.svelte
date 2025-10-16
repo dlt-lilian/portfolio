@@ -65,13 +65,31 @@
     </div>
 
     <!-- Compétences -->
-    <div>
-        <Text type="h2">
+    <div class="space-y-4">
+        <Text type="h2"
+              size="lg"
+              weight="semibold">
             {Data.competences.title}
         </Text>
-        <Text type="p">
-            {Test.indev}
-        </Text>
+
+        <div class="flex justify-between">
+            {#each Data.competences.list as competence}
+                <div class="space-y-4">
+                    <Text type="h3">
+                        {competence.category}
+                    </Text>
+                    <ul class="space-y-4">
+                        {#each competence.skills as skill}
+                            <li>
+                                <img src={skill.image}
+                                     alt={skill.name}
+                                     class="w-20">
+                            </li>
+                        {/each}
+                    </ul>
+                </div>
+            {/each}
+        </div>
     </div>
 
     <!-- À propos -->
@@ -99,6 +117,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
         <Text type="h3"
+              size="lg"
               weight="semibold"
               class="col-span-4">
             {Data.about.formation.title}
