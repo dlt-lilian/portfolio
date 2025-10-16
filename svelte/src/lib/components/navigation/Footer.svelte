@@ -1,6 +1,6 @@
 <script>
     import Button from "$lib/components/ui/actions/Button.svelte";
-    import Data from "$lib/data/Navigation.json";
+    import Data from "$lib/data/Navigation.json" with { type: "json" };
 </script>
 
 <footer class="footer justify-center">
@@ -11,12 +11,12 @@
                     <h3>
                         {column.title}
                     </h3>
-                    <div>
+                    <div class="flex flex-col">
                         {#each column.items as item}
                             <Button
                                     link={item.url}
                                     iconLeft={item.icon}
-                                    variant="ghost"
+                                    variant="link"
                             >
                                 {item.label}
                             </Button>

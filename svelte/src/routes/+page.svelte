@@ -15,22 +15,26 @@
     <!-- Header -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-            <Text type="h1" size="xl" weight="semibold">-
+            <Text type="h1"
+                  size="xl"
+                  weight="semibold">
                 {Data.header.title[0]}
             </Text>
 
-            <Text type="h2" size="lg" weight="semibold">
+            <Text type="h2"
+                  size="lg"
+                  weight="semibold">
                 {Data.header.title[1]}
             </Text>
 
-            <Text type="p" class="mt-5">
+            <Text type="p"
+                  class="mt-5">
                 {Data.header.text}
             </Text>
         </div>
-        <img
-                src={Data.header.image}
-                alt="Header"
-                class="aspect-[4/3] w-full object-cover rounded-md"
+        <img src={Data.header.image}
+             alt="Header"
+             class="aspect-[4/3] w-full object-cover rounded-md"
         />
     </div>
     <!-- Portfolio -->
@@ -72,10 +76,9 @@
 
     <!-- À propos -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <img
-                src={Data.about.image}
-                alt="À propos"
-                class="aspect-[4/3] w-full object-cover rounded-md"
+        <img src={Data.about.image}
+             alt="À propos"
+             class="aspect-[4/3] w-full object-cover rounded-md"
         />
 
         <div class="md:col-span-3">
@@ -202,13 +205,20 @@
 
     <!-- Contact -->
     <div class="grid grid-cols-2 gap-4">
-        <Text type="h2"
-              class="col-span-full">
-            {Data.contact.title}
-        </Text>
-        <Text type="p">
-            Text a ajouter
-        </Text>
+        <div class="space-y-5">
+            <Text type="h2"
+                  size="lg">
+                    {Data.contact.title}
+            </Text>
+
+            <img src={Data.about.image}
+                 alt="À propos"
+                 class="aspect-[4/3] w-full object-cover rounded-md"
+            />
+            <Text type="p">
+                {Test.text}
+            </Text>
+            </div>
 
         <form class="grid grid-cols-1 space-y-4">
             <div class="grid grid-cols-2 gap-4">

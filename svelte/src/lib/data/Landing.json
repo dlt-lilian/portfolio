@@ -94,6 +94,14 @@
           "periode": "2024-2025",
           "duree": "9 mois",
           "type": "alternance",
+          "status": "en cours"
+        },
+        {
+          "poste": "Maquettiste web & Développeur web",
+          "entreprise": "Mecaservicesshop",
+          "periode": "2024-2025",
+          "duree": "9 mois",
+          "type": "alternance",
           "status": "termine"
         }
       ]

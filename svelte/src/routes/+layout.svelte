@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-    import Header from "$lib/components/navigation/Header.svelte";
-    import Footer from "$lib/components/navigation/Footer.svelte";
+    import Header from "$lib/components/navigation/Header.svelte" with { type: "json" };
+    import Footer from "$lib/components/navigation/Footer.svelte" with { type: "json" };
 
 	let { children } = $props();
 </script>

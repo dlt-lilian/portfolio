@@ -1,6 +1,6 @@
 <script>
     import Button from "$lib/components/ui/actions/Button.svelte";
-    import Data from "$lib/data/Navigation.json";
+    import Data from "$lib/data/Navigation.json" with { type: "json" };
     import Themecontroller from "$lib/components/ui/actions/Themecontroller.svelte";
 </script>
 
