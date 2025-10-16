@@ -3,15 +3,15 @@
     import Data from "$lib/data/Navigation.json" with { type: "json" };
 </script>
 
-<footer class="footer justify-center">
-    <div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+<footer class="flex justify-center">
+    <div class="w-full max-w-7xl px-4">
+        <div class="flex justify-between">
             {#each Data.footer.columns as column}
-                <div class="footer-column">
-                    <h3>
+                <div class="w-max">
+                    <h3 class="w-max">
                         {column.title}
                     </h3>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col w-max">
                         {#each column.items as item}
                             <Button
                                     link={item.url}
@@ -26,9 +26,11 @@
             {/each}
         </div>
 
-            {Data.footer.copyright}
-        <p class="w-full text-center">
-        </p>
-
+        <div class="w-full border-b-1 p-4"></div>
+        <div class="w-full p-4">
+            <p class="w-full text-center">
+                {Data.footer.copyright}
+            </p>
+        </div>
     </div>
 </footer>

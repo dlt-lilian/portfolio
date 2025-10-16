@@ -106,7 +106,6 @@
         <!-- Formation Scolaire -->
         <div class="space-y-4">
 
-
             <Text type="h4">
                 {Data.about.formation.scolaire.title}
             </Text>
@@ -126,7 +125,9 @@
                               size="sm">
                             {formation.periode}
                         </Text>
-                        <Badge color="success" >{formation.status}</Badge>
+                        <Badge color="success" >{
+                            formation.status}
+                        </Badge>
                     </div>
                 </div>
             {/each}
@@ -140,10 +141,12 @@
 
             {#each Data.about.formation.personnelle.items as formation}
                 <div class="space-y-1 p-3 bg-gray-50 rounded-md">
-                    <Text type="p" size="sm">
+                    <Text type="p"
+                          size="sm">
                         {formation.plateforme}
                     </Text>
-                    <Text type="span" size="sm">
+                    <Text type="span"
+                          size="sm">
                         Auto-formation
                     </Text>
                 </div>
@@ -181,18 +184,23 @@
 
             {#each Data.about.experience.alternance as exp}
                 <div class="space-y-2 p-3 bg-gray-50 rounded-md">
-                    <Text type="p" size="sm">
+                    <Text type="p"
+                          size="sm">
                         {exp.poste}
                     </Text>
-                    <Text type="p" size="sm">
+                    <Text type="p"
+                          size="sm">
                         {exp.entreprise}
                     </Text>
                     <div class="flex items-center gap-2">
-                        <Text type="span" size="sm">
+                        <Text type="span"
+                              size="sm">
                             {exp.periode} • {exp.duree}
                         </Text>
                         {#if exp.status === 'en cours'}
-                            <Badge color="info" >{exp.status}</Badge>
+                            <Badge color="info" >
+                                {exp.status}
+                            </Badge>
                         {/if}
                         {#if exp.status === 'termine'}
                             <Badge color="success" >{exp.status}</Badge>
@@ -223,16 +231,20 @@
         <form class="grid grid-cols-1 space-y-4">
             <div class="grid grid-cols-2 gap-4">
                 <Fieldset legend="Nom">
-                    <Input placeholder="Coucou" required />
+                    <Input placeholder="Coucou"
+                           required />
                 </Fieldset>
 
                 <Fieldset legend="Prénom">
-                    <Input placeholder="Coucou" required />
+                    <Input placeholder="Coucou"
+                           required />
                  </Fieldset>
             </div>
 
             <Fieldset legend="Adresse Email">
-                <Input placeholder="Coucou" type="email" required />
+                <Input placeholder="Coucou"
+                       type="email"
+                       required />
             </Fieldset>
 
             <Fieldset legend="Société">
@@ -240,20 +252,24 @@
             </Fieldset>
 
             <Fieldset legend="Objet">
-                <Input placeholder="Coucou" required />
+                <Input placeholder="Coucou"
+                       required />
              </Fieldset>
 
             <Fieldset legend="Message">
-                <Textarea placeholder="Votre message" required />
+                <Textarea placeholder="Votre message"
+                          required />
             </Fieldset>
-            <Button iconLeft="lucide:info" variant="link"
+            <Button iconLeft="lucide:info"
+                    variant="link"
                     link="/cgu">
                 <Text>
                     En soumettant ce formulaire, j'accepte les conditions ...
                 </Text>
             </Button>
 
-            <Button width="full" iconLeft="lucide:info"/>
+            <Button width="full"
+                    iconLeft="lucide:info"/>
         </form>
     </div>
 
