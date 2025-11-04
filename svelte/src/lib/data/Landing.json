@@ -23,56 +23,7 @@
   },
   "competences": {
     "title": "Compétences",
-    "list": [
-      {
-        "category": "Framework JavaScript :",
-        "skills": [
-          {
-            "name": "Nuxt",
-            "image": "https://homepage-media.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2023/07/06161239/nuxt-logo.png"
-          },
-          {
-            "name": "Svelte",
-            "image": "https://blog.ippon.fr/content/images/2020/11/svelte-logo.png"
-          },
-          {
-            "name": "Adonis",
-            "image": "https://miro.medium.com/1*NvAqNoaERe7VzT-s47PQcw.png"
-          }
-        ]
-      },
-      {
-        "category": "Librairies JavaScript :",
-        "skills": [
-          {
-            "name": "Pinia",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinialogo.svg/1369px-Pinialogo.svg.png"
-          }
-        ]
-      },
-      {
-        "category": "Librairies CSS :",
-        "skills": [
-          {
-            "name": "Tailwind CSS",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
-          }
-        ]
-      },
-      {
-        "category": "Logiciels :",
-        "skills": [
-          {
-            "name": "Github",
-            "image": "https://miro.medium.com/1*dDNpLKu_oTLzStsDTnkJ-g.png"
-          },
-          {
-            "name": "Webstorm",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTh56b1oArevn5nlVRLWdsjyCbw7C6r18yg&s"
-          }
-        ]
-      }
-    ]
+    "text": "Cliquez sur une compétence pour voir les détails"
   },
   "about": {
     "title": "À propos",

@@ -5,7 +5,7 @@
 </script>
 
 <!--Probleme avec darkMode-->
-<div class="navbar grid grid-cols-3 gap-4 shadow-md px-50 sticky top-0 bg-white">
+<div class="navbar grid grid-cols-3 gap-4 shadow-md px-50 sticky top-0 z-100 bg-white">
     <div class="col-start-2 flex justify-center">
         {#each Data.navbar as item}
             <Button

@@ -1,0 +1,37 @@
+{
+  "name": "Moi",
+  "h2": "Compétences",
+  "h4": "Compétences associées:",
+  "p": "Cliquez sur une compétence pour voir les détails",
+  "children": [
+    {
+      "name": "Javascript",
+      "children": [
+        { "name": "React" },
+        { "name": "Vue.js" },
+        { "name": "Svelte" }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "children": [
+        { "name": "Tailwind" },
+        { "name": "DaisyUi" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "children": [
+        { "name": "PostgreSQL" }
+      ]
+    },
+    {
+      "name": "Design",
+      "children": [
+        { "name": "Figma" },
+        { "name": "UI/UX" },
+        { "name": "Photoshop" }
+      ]
+    }
+  ]
+}

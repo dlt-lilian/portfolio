@@ -5,7 +5,8 @@
     import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
     import Input from "$lib/components/ui/input/Input.svelte";
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
-    
+    import Skilltree from "$lib/components/ui/Skilltree.svelte";
+
     import Test from "$lib/data/test.json" with { type:"json" };
     import Data from "$lib/data/Landing.json" with { type: "json" };
 </script>
@@ -65,32 +66,8 @@
     </div>
 
     <!-- Compétences -->
-    <div class="space-y-4">
-        <Text type="h2"
-              size="lg"
-              weight="semibold">
-            {Data.competences.title}
-        </Text>
+        <Skilltree/>
 
-        <div class="flex justify-between">
-            {#each Data.competences.list as competence}
-                <div class="space-y-4">
-                    <Text type="h3">
-                        {competence.category}
-                    </Text>
-                    <ul class="space-y-4">
-                        {#each competence.skills as skill}
-                            <li>
-                                <img src={skill.image}
-                                     alt={skill.name}
-                                     class="w-20">
-                            </li>
-                        {/each}
-                    </ul>
-                </div>
-            {/each}
-        </div>
-    </div>
 
     <!-- À propos -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">

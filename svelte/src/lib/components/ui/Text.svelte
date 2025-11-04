@@ -23,8 +23,8 @@
         '': '',
         'white': 'text-white',
         'primary': 'text-primary',
-        'success': 'text-success',
-        'warning': 'text-warning',
+        'success': 'text-green-700',
+        'warning': 'text-red-700',
         'error': 'text-error',
     }
 
