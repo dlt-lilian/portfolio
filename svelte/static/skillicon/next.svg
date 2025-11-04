@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Dégradé_sans_nom_6);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: url(#Dégradé_sans_nom_5);
+      }
+    </style>
+    <linearGradient id="Dégradé_sans_nom_5" data-name="Dégradé sans nom 5" x1="141.08" y1="57.47" x2="141.08" y2="122.53" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2" stop-color="#bcbcbc"/>
+      <stop offset=".41" stop-color="#7a7a7a"/>
+      <stop offset=".61" stop-color="#454545"/>
+      <stop offset=".78" stop-color="#1f1f1f"/>
+      <stop offset=".91" stop-color="#080808"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_6" data-name="Dégradé sans nom 6" x1="116.83" y1="119.95" x2="165.43" y2="181.47" gradientTransform="translate(100.78 -47.28) rotate(37.98)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".17" stop-color="#d2d2d2"/>
+      <stop offset=".75" stop-color="#3c3c3c"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-3" width="200" height="200"/>
+  <rect class="cls-3" x="20" y="20" width="160" height="160"/>
+  <g>
+    <rect class="cls-4" x="133.16" y="50.33" width="15.84" height="94.55"/>
+    <g>
+      <rect class="cls-1" x="111.17" y="37.05" width="15.84" height="171.51" transform="translate(-50.35 99.28) rotate(-37.98)"/>
+      <polygon class="cls-2" points="72.63 50.33 68.53 50.33 56.8 50.33 52.7 50.33 52.7 144.89 68.53 144.89 68.53 70.3 72.63 70.3 72.63 50.33"/>
+    </g>
+  </g>
+</svg>

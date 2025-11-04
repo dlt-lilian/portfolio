@@ -1,0 +1,88 @@
+{
+  "about": {
+    "title": "À propos",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": "https://picsum.photos/1920/1080",
+    "cv": {
+      "label": "Télécharger mon CV",
+      "link": "/static/CV.pdf"
+    },
+    "formation": {
+      "title": "Formation",
+      "scolaire": {
+        "title": "Cursus scolaire",
+        "items": [
+          {
+            "diplome": "Diplôme Webdesigner",
+            "etablissement": "FIM CCI Formation Saint-Lô",
+            "periode": "2024-2025",
+            "status": "obtenu"
+          },
+          {
+            "diplome": "BAC Professionnel Réseau Informatique & Système Communicant",
+            "etablissement": "Lycée Curie Corot Saint-Lô (2021) / Lycée Charles Tellier Condé-sur-Noireau",
+            "periode": "2022-2023",
+            "status": "obtenu"
+          }
+        ]
+      },
+      "personnelle": {
+        "title": "Apprentissage personnelle",
+        "items": [
+          {
+            "plateforme": "OpenClassrooms",
+            "type": "auto_formation"
+          },
+          {
+            "plateforme": "Codédex",
+            "type": "auto_formation"
+          },
+          {
+            "plateforme": "roadmap.sh",
+            "type": "auto_formation"
+          }
+        ]
+      }
+    },
+    "experience": {
+      "title": "Expérience professionnelle",
+      "stages": [
+        {
+          "poste": "Infographiste",
+          "entreprise": "Crédit Agricole Normandie",
+          "periode": "2024",
+          "duree": "4 mois",
+          "type": "stage"
+        },
+        {
+          "poste": "Maquettiste web",
+          "entreprise": "Altitude Création",
+          "periode": "2023",
+          "duree": "2 mois",
+          "type": "stage"
+        }
+      ],
+      "alternance": [
+        {
+          "poste": "Maquettiste web & Développeur web",
+          "entreprise": "Mecaservicesshop",
+          "periode": "2024-2025",
+          "duree": "9 mois",
+          "type": "alternance",
+          "status": "en cours"
+        },
+        {
+          "poste": "Maquettiste web & Développeur web",
+          "entreprise": "Mecaservicesshop",
+          "periode": "2024-2025",
+          "duree": "9 mois",
+          "type": "alternance",
+          "status": "termine"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact"
+  }
+}

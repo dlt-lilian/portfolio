@@ -7,30 +7,61 @@
     {
       "name": "Javascript",
       "children": [
-        { "name": "React" },
-        { "name": "Vue.js" },
-        { "name": "Svelte" }
+        {
+          "name": "NextJs",
+          "img": "/skillicon/next.svg"
+        },
+        {
+          "name": "Nuxt",
+          "img": "/skillicon/nuxt.svg"
+        },
+        {
+          "name": "Svelte",
+          "img": "/skillicon/svelte.svg"
+        },
+        {
+          "name": "Adonis",
+          "img": "/skillicon/adonis.svg"
+        }
+
       ]
     },
     {
       "name": "Frontend",
       "children": [
-        { "name": "Tailwind" },
-        { "name": "DaisyUi" }
+        {
+          "name": "Tailwind"
+        },
+        {
+          "name": "DaisyUi"
+        }
       ]
     },
     {
       "name": "Backend",
       "children": [
-        { "name": "PostgreSQL" }
+        {
+          "name": "PostgreSQL",
+          "img": "./static/favicon"
+        }
       ]
     },
     {
       "name": "Design",
       "children": [
-        { "name": "Figma" },
-        { "name": "UI/UX" },
-        { "name": "Photoshop" }
+        {
+          "name": "Figma",
+          "img": "./static/favicon"
+        },
+        {
+          "name": "UI/UX",
+          "img": "./static/favicon"
+        },
+
+        {
+          "name": "Photoshop",
+          "img": "./static/favicon"
+        }
       ]
     }
   ]

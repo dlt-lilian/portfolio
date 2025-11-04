@@ -2,14 +2,15 @@
     import Text from "$lib/components/ui/Text.svelte";
 
     // --- Typage ---
-    // Type d'une compétence
     type Skill = {
         name: string;
+        img?: string;
         children?: Skill[];
     };
 
+
     // --- Données ---
-    import skillsData from "$lib/data/Skilltree.json" with { type: "json" };
+    import Data from "$lib/data/Skilltree.json" with { type: "json" };
 
     // --- Variables d'état ---
     let selectedSkill: Skill | null = null;
@@ -24,10 +25,10 @@
 <div>
     <Text type="h2"
           size="lg">
-        {skillsData.h2}
+        {Data.h2}
     </Text>
     <Text type="p">
-        {skillsData.p}
+        {Data.p}
     </Text>
     <div class="relative">
         <!-- Conteneur de l'arbre circulaire -->
@@ -36,13 +37,13 @@
             <!-- Centre - Nœud racine -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div class="w-24 h-24 rounded-full bg-black shadow-2xl flex items-center justify-center cursor-pointer transform transition-transform hover:scale-110">
-                    <span class="text-white font-bold text-lg">{skillsData.name}</span>
+                    <span class="text-white font-bold text-lg">{Data.name}</span>
                 </div>
             </div>
 
             <!-- Branches et nœuds principaux -->
-            {#each skillsData.children as category, categoryIndex}
-                {@const angle = (categoryIndex * 360 / skillsData.children.length) - 90}
+            {#each Data.children as category, categoryIndex}
+                {@const angle = (categoryIndex * 360 / Data.children.length) - 90}
                 {@const categoryRadius = 220}
                 {@const categoryX = Math.cos(angle * Math.PI / 180) * categoryRadius}
                 {@const categoryY = Math.sin(angle * Math.PI / 180) * categoryRadius}
@@ -127,8 +128,12 @@
         {#if selectedSkill}
             <div class="mt-12 bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto transform transition-all animate-fade-in">
                 <div class="flex items-start gap-6">
-                    <div class="w-20 h-20 rounded-2xl bg-black shadow-lg flex items-center justify-center flex-shrink-0">
-                        <span class="text-white font-bold text-2xl">{selectedSkill.name.charAt(0)}</span>
+                    <div class="w-20 h-20 rounded-2xl bg-black shadow-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                        {#if selectedSkill.img}
+                            <img src={selectedSkill.img} alt={selectedSkill.name} class="object-contain w-full h-full" />
+                        {:else}
+                            <span class="text-white font-bold text-2xl">{selectedSkill.name.charAt(0)}</span>
+                        {/if}
                     </div>
 
                     <div class="flex-1">
@@ -144,11 +149,11 @@
                                       weight="semibold">
                                     {selectedSkill.name}
                                 </Text>
-                                <Text type="h4"
+                                    <Text type="h4"
                                       size="sm"
                                       color="success"
                                       weight="semibold">
-                                    {skillsData.h4}
+                                    {Data.h4}
                                 </Text>
                                 <div class="flex flex-wrap gap-2">
                                     {#each selectedSkill.children as child}
