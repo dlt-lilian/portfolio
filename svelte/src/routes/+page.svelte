@@ -17,10 +17,7 @@
 
     <About />
 
-    <!-- Formation et Expérience -->
     <Experiences />
-
-    <!-- Contact -->
 
     <Contact />
 

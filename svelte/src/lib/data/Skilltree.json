@@ -1,5 +1,5 @@
 {
-  "name": "Moi",
+  "name": "Coucou",
   "h2": "Compétences",
   "h4": "Compétences associées:",
   "p": "Cliquez sur une compétence pour voir les détails",
@@ -7,24 +7,31 @@
     {
       "name": "Javascript",
       "children": [
-        {
-          "name": "NextJs",
-          "img": "/skillicon/next.svg"
-        },
-        {
-          "name": "Nuxt",
-          "img": "/skillicon/nuxt.svg"
-        },
-        {
-          "name": "Svelte",
-          "img": "/skillicon/svelte.svg"
-        },
-        {
-          "name": "Adonis",
-          "img": "/skillicon/adonis.svg"
-        }
-
-      ]
+            {
+              "name": "NextJs",
+              "img": "/skillicon/next.svg",
+              "description": "Framework React moderne pour le rendu côté serveur et les applications web full-stack.",
+              "link": "https://nextjs.org/"
+            },
+            {
+              "name": "Nuxt",
+              "img": "/skillicon/nuxt.svg",
+              "description": "Framework Vue.js pour créer des applications web performantes, universelles et modulaires.",
+              "link": "https://nuxt.com/"
+            },
+            {
+              "name": "Svelte",
+              "img": "/skillicon/svelte.svg",
+              "description": "Framework JavaScript réactif qui compile le code au moment du build pour des performances optimales.",
+              "link": "https://svelte.dev/"
+            },
+            {
+              "name": "Adonis",
+              "img": "/skillicon/adonis.svg",
+              "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+              "link": "https://adonisjs.com/"
+            }
+        ]
     },
     {
       "name": "Frontend",
