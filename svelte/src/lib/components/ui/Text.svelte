@@ -3,6 +3,7 @@
     export let size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
     export let weight: 'light' | 'normal' | 'semibold' | 'bold' | 'black' = 'normal';
     export let color: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
+    export let bgColor: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
 
     const sizeClasses = {
         sm: 'text-sm',
@@ -28,10 +29,22 @@
         'error': 'text-error',
     }
 
+    const bgClasses = {
+        '': '',
+        'white': 'bg-white',
+        'primary': 'bg-primary',
+        'success': 'bg-success/50',
+        'warning': 'bg-warning/50',
+        'error': 'bg-error/50',
+    }
+
     $: classes = [
         sizeClasses[size],
         weightClasses[weight],
-        colorClasses[color]
+        colorClasses[color],
+        bgClasses[bgColor],
+        // ✅ Ajouter padding et width automatiquement si bgColor est défini
+        bgColor !== '' ? 'px-2 py-1 rounded-full w-max' : ''
     ]
         .filter(Boolean)
         .join(' ');

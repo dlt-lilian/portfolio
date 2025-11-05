@@ -1,11 +1,12 @@
 {
-  "name": "Coucou",
+  "name": "Compétences",
   "h2": "Compétences",
   "h4": "Compétences associées:",
   "p": "Cliquez sur une compétence pour voir les détails",
   "children": [
     {
       "name": "Javascript",
+      "img": "/skillicon/js.svg",
       "children": [
             {
               "name": "NextJs",
@@ -35,39 +36,57 @@
     },
     {
       "name": "Frontend",
+      "img": "",
       "children": [
         {
-          "name": "Tailwind"
+          "name": "Tailwind",
+          "img": "/skillicon/tw.svg",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
         },
         {
-          "name": "DaisyUi"
+          "name": "DaisyUi",
+          "img": "/skillicon/daisyui.svg",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
         }
       ]
     },
     {
       "name": "Backend",
+      "img": "",
       "children": [
         {
           "name": "PostgreSQL",
-          "img": "./static/favicon"
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+
         }
       ]
     },
     {
       "name": "Design",
+      "img": "",
       "children": [
         {
           "name": "Figma",
-          "img": "./static/favicon"
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
         },
         {
           "name": "UI/UX",
-          "img": "./static/favicon"
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
         },
 
         {
           "name": "Photoshop",
-          "img": "./static/favicon"
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
         }
       ]
     }
