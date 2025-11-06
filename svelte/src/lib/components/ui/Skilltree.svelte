@@ -2,7 +2,6 @@
     import { onMount } from 'svelte';
     import Text from "$lib/components/ui/Text.svelte"
     import Link from "$lib/components/ui/navigation/Link.svelte"
-    import Icon from "$lib/components/ui/Icon.svelte"
 
     // --- Typage ---
     type Skill = {
@@ -232,7 +231,7 @@
                     <div class="text-center text-gray-400 flex gap-2">
                         <Text type="p"
                               size="sm"
-                              iconLeft="lucide:info">
+                              iconLeft={Data.icon}>
                             {Data.p}
                         </Text>
                     </div>

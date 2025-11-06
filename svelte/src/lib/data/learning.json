@@ -1,0 +1,50 @@
+{
+  "title": "Formations",
+  "content": [
+    [
+      "Cursus scolaire",
+      "Diplôme Webdesigner",
+      "FIM CCI Formation Saint-Lô",
+      "2024-2025",
+      "obtenu"
+    ],
+    [
+      "Cursus scolaire",
+      "BAC Professionnel Réseau Informatique & Système Communicant",
+      "Lycée Curie Corot Saint-Lô (2021) / Lycée Charles Tellier Condé-sur-Noireau",
+      "2021-2023",
+      "obtenu"
+    ],
+    [
+      "Cursus scolaire",
+      "Diplôme Webdesigner",
+      "FIM CCI Formation Saint-Lô",
+      "2024-2025",
+      "obtenu"
+    ],
+
+    [
+      "Apprentissage personnelle",
+      "OpenClassrooms",
+      "auto_formation"
+    ],
+    [
+      "Apprentissage personnelle",
+      "Codédex",
+      "auto_formation"
+    ],
+    [
+      "Apprentissage personnelle",
+      "roadmap.sh",
+      "auto_formation"
+    ],
+
+    [
+      "Coucou1",
+      "Coucou2",
+      "Coucou3",
+      "Coucou4",
+      "Coucou5"
+    ]
+  ]
+}

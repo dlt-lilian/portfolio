@@ -1,70 +1,57 @@
-<script>
+<script lang="ts">
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Text from "$lib/components/ui/Text.svelte";
     import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
     import Input from "$lib/components/ui/input/Input.svelte";
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
-    import Data from "$lib/data/landing.json" with { type: "json" };
+    import Data from "$lib/data/Contact.json" with { type: "json" };
 
+    const contact = Data.contact;
+    const form = Data.form;
+
+    const fields = Object.entries(form).filter(
+        ([key, value]) => Array.isArray(value)
+    );
 </script>
+
+<Text
+        type="h2"
+        size="xl"
+        weight="semibold"
+        align="center">
+    {contact.title}
+</Text>
 
 <div class="grid grid-cols-2 gap-4">
     <div class="space-y-5">
-        <Text type="h2"
-              size="lg">
-            {Data.contact.title}
-        </Text>
-
-        <img src={Data.about.image}
+        <img src={contact.img}
              alt="À propos"
-             class="aspect-[4/3] w-full object-cover rounded-xl"
-        />
-        <Text type="p">
-            {Data.text}
-        </Text>
+             class="w-full h-full object-cover rounded-xl" />
     </div>
 
-    <form class="grid grid-cols-1 space-y-4">
-        <div class="grid grid-cols-2 gap-4">
-            <Fieldset legend="Nom">
-                <Input placeholder="Coucou"
-                       required />
+    <form class="space-y-4">
+        {#each fields as [key, [label, placeholder]]}
+            <Fieldset legend={label} />
+                {#if key === "message"}
+                    <Textarea placeholder={placeholder}
+                              required />
+                {:else}
+                    <Input placeholder={placeholder}
+                           type={key === "email" ? "email" : "text"}
+                           required={key !== "company"} />
+                {/if}
             </Fieldset>
+        {/each}
 
-            <Fieldset legend="Prénom">
-                <Input placeholder="Coucou"
-                       required />
-            </Fieldset>
-        </div>
-
-        <Fieldset legend="Adresse Email">
-            <Input placeholder="Coucou"
-                   type="email"
-                   required />
-        </Fieldset>
-
-        <Fieldset legend="Société">
-            <Input placeholder="Coucou" />
-        </Fieldset>
-
-        <Fieldset legend="Objet">
-            <Input placeholder="Coucou"
-                   required />
-        </Fieldset>
-
-        <Fieldset legend="Message">
-                <Textarea placeholder="Votre message"
-                          required />
-        </Fieldset>
-        <Button iconLeft="lucide:info"
+        <Button iconLeft={form.link.icon}
                 variant="link"
-                link="/cgu">
-            <Text>
-                En soumettant ce formulaire, j'accepte les conditions ...
-            </Text>
+                link={form.link.link}>
+            {form.link.text}
         </Button>
 
         <Button width="full"
-                iconLeft="lucide:info"/>
+                iconLeft={form.button.icon}>
+            {form.button.text}
+        </Button>
     </form>
 </div>

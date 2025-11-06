@@ -11,8 +11,10 @@
          class="aspect-[4/3] w-full object-cover rounded-xl"
     />
 
-    <div class="md:col-span-3">
-        <Text type="h2">
+    <div class="md:col-span-3 flex flex-col justify-between">
+        <Text type="h2"
+              size="xl"
+              weight="semibold">
             {Data.about.title}
         </Text>
         <Text type="p">

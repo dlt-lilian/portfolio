@@ -7,8 +7,5 @@
       "label": "Télécharger mon CV",
       "link": "/static/CV.pdf"
     }
-  },
-  "contact": {
-    "title": "Contact"
   }
 }

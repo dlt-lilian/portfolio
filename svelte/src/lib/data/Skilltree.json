@@ -2,6 +2,7 @@
   "name": "Compétences",
   "h2": "Compétences",
   "h4": "Compétences associées:",
+  "icon": "lucide:info",
   "p": "Cliquez sur une compétence pour voir les détails",
   "children": [
     {
