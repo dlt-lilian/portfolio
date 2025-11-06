@@ -21,7 +21,7 @@
         </Text>
 
         {#each Data.about.formation.scolaire.items as formation}
-            <div class="space-y-2 p-3 bg-gray-50 rounded-md">
+            <div class="space-y-2 p-3 bg-gray-50 rounded-xl">
                 <Text type="p"
                       size="sm">
                     {formation.diplome}
@@ -50,7 +50,7 @@
         </Text>
 
         {#each Data.about.formation.personnelle.items as formation}
-            <div class="space-y-1 p-3 bg-gray-50 rounded-md">
+            <div class="space-y-1 p-3 bg-gray-50 rounded-xl">
                 <Text type="p"
                       size="sm">
                     {formation.plateforme}
@@ -69,7 +69,7 @@
         </Text>
 
         {#each Data.about.experience.stages as stage}
-            <div class="space-y-2 p-3 bg-gray-50 rounded-md">
+            <div class="space-y-2 p-3 bg-gray-50 rounded-xl">
                 <Text type="p"
                       size="sm">
                     {stage.poste}
@@ -93,7 +93,7 @@
         </Text>
 
         {#each Data.about.experience.alternance as exp}
-            <div class="space-y-2 p-3 bg-gray-50 rounded-md">
+            <div class="space-y-2 p-3 bg-gray-50 rounded-xl">
                 <Text type="p"
                       size="sm">
                     {exp.poste}

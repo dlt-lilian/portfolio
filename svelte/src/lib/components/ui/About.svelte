@@ -8,7 +8,7 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
     <img src={Data.about.image}
          alt="À propos"
-         class="aspect-[4/3] w-full object-cover rounded-md"
+         class="aspect-[4/3] w-full object-cover rounded-xl"
     />
 
     <div class="md:col-span-3">

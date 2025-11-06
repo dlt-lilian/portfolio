@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import Icon from '@iconify/svelte';
+    import Icon from "$lib/components/ui/Icon.svelte";
 
     export let variant:
         | 'primary'
@@ -16,7 +16,16 @@
     export let width: 'full' | 'col' | 'max' = 'max';
     export let iconLeft: string | null = null;
     export let iconRight: string | null = null;
-    export let iconSize: number = 16;
+    export let iconSize: 'xs' | 'sm' | 'md' | 'lg' = 'xs';
+    export let iconColor:
+        | 'default'
+        | 'primary'
+        | 'secondary'
+        | 'accent'
+        | 'info'
+        | 'success'
+        | 'warning'
+        | 'error' = 'default';
     export let link: string | null = null;
     export let outline: boolean = false;
     export let wide: boolean = false;
@@ -70,24 +79,34 @@
 
 {#if link}
     <a href={link}>
-        <button class={classes} {disabled} on:click={handleClick} type="button" {...$$restProps}>
+        <button class={classes} {disabled} on:click={handleClick}
+                type="button" {...$$restProps}>
             {#if iconLeft}
-                <Icon icon={iconLeft} width={iconSize} height={iconSize} />
+                <Icon name={iconLeft}
+                      size={iconSize}
+                      color={iconColor} />
             {/if}
             <slot>Button</slot>
             {#if iconRight}
-                <Icon icon={iconRight} width={iconSize} height={iconSize} />
+                <Icon name={iconRight}
+                      size={iconSize}
+                      color={iconColor} />
             {/if}
         </button>
     </a>
 {:else}
-    <button class={classes} {disabled} on:click={handleClick} type="button" {...$$restProps}>
+    <button class={classes} {disabled} on:click={handleClick}
+            type="button" {...$$restProps}>
         {#if iconLeft}
-            <Icon icon={iconLeft} width={iconSize} height={iconSize} />
+            <Icon name={iconLeft}
+                  size={iconSize}
+                  color={iconColor} />
         {/if}
         <slot>Button</slot>
         {#if iconRight}
-            <Icon icon={iconRight} width={iconSize} height={iconSize} />
+            <Icon name={iconRight}
+                  size={iconSize}
+                  color={iconColor} />
         {/if}
     </button>
 {/if}

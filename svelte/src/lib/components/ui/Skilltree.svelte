@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import Text from "$lib/components/ui/Text.svelte"
     import Link from "$lib/components/ui/navigation/Link.svelte"
+    import Icon from "$lib/components/ui/Icon.svelte"
 
     // --- Typage ---
     type Skill = {
@@ -174,7 +175,7 @@
             {#if selectedSkill}
                 <div class="bg-white rounded-xl shadow-xl p-4 md:p-6 lg:p-8 h-full animate-fade-in">
                     <div class="flex items-start gap-3 md:gap-4 lg:gap-6">
-                        <div class="w-20 h-20 rounded-xl bg-black shadow-xl">
+                        <div class="w-20 h-20 rounded-xl bg-black shadow-xl flex items-center justify-center">
                             {#if selectedSkill.img}
                                 <img
                                         src={selectedSkill.img}
@@ -184,7 +185,7 @@
                             {:else}
                                 <Text type="span"
                                       color="white"
-                                      size="sm"
+                                      size="xl"
                                       weight="semibold">
                                     {selectedSkill.name.charAt(0)}
                                 </Text>
@@ -228,10 +229,10 @@
                 </div>
             {:else}
                 <div class="bg-white rounded-xl shadow-xl p-4 h-full flex items-center justify-center">
-                    <div class="text-center text-gray-400">
-<!--                        <Icon>lucide:info</Icon>-->
+                    <div class="text-center text-gray-400 flex gap-2">
                         <Text type="p"
-                              size="sm">
+                              size="sm"
+                              iconLeft="lucide:info">
                             {Data.p}
                         </Text>
                     </div>

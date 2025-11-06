@@ -25,6 +25,6 @@
     </div>
     <img src={Data.header.image}
          alt="Header"
-         class="aspect-[4/3] w-full object-cover rounded-md"
+         class="aspect-[4/3] w-full object-cover rounded-xl"
     />
 </div>

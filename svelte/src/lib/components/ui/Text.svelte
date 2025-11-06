@@ -1,9 +1,23 @@
 <script lang="ts">
+    import Icon from "$lib/components/ui/Icon.svelte";
+
     export let type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' = 'p';
     export let size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
     export let weight: 'light' | 'normal' | 'semibold' | 'bold' | 'black' = 'normal';
     export let color: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
     export let bgColor: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
+    export let iconLeft: string | null = null;
+    export let iconRight: string | null = null;
+    export let iconSize: 'xs' | 'sm' | 'md' | 'lg' = 'xs';
+    export let iconColor:
+        | 'default'
+        | 'primary'
+        | 'secondary'
+        | 'accent'
+        | 'info'
+        | 'success'
+        | 'warning'
+        | 'error' = 'default';
 
     const sizeClasses = {
         sm: 'text-sm',
@@ -43,8 +57,8 @@
         weightClasses[weight],
         colorClasses[color],
         bgClasses[bgColor],
-        // ✅ Ajouter padding et width automatiquement si bgColor est défini
-        bgColor !== '' ? 'px-2 py-1 rounded-full w-max' : ''
+        bgColor !== '' ? 'px-2 py-1 rounded-full w-max' : '',
+        (iconLeft || iconRight) ? 'flex items-center gap-2' : ''
     ]
         .filter(Boolean)
         .join(' ');
@@ -55,5 +69,11 @@
         class={classes}
         {...$$restProps}
 >
+    {#if iconLeft}
+        <Icon name={iconLeft} size={iconSize} color={iconColor} />
+    {/if}
     <slot />
+    {#if iconRight}
+        <Icon name={iconRight} size={iconSize} color={iconColor} />
+    {/if}
 </svelte:element>

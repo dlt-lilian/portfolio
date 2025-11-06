@@ -1,17 +1,19 @@
-<script>
+<script lang="ts">
     import Button from "$lib/components/ui/actions/Button.svelte";
+    import Divider from "$lib/components/ui/layout/Divider.svelte";
+
     import Data from "$lib/data/Navigation.json" with { type: "json" };
 </script>
 
-<footer class="flex justify-center">
-    <div class="w-full max-w-7xl px-4">
-        <div class="flex justify-between">
+<footer class="flex justify-center bg-gray-100 p-5">
+    <div class="w-full">
+        <div class="grid grid-cols-3 mx-100">
             {#each Data.footer.columns as column}
-                <div class="w-max">
-                    <h3 class="w-max">
+                <div class="">
+                    <h3 class=" w-full text-center">
                         {column.title}
                     </h3>
-                    <div class="flex flex-col w-max">
+                    <div class="flex flex-col justify-center">
                         {#each column.items as item}
                             <Button
                                     link={item.url}
@@ -26,11 +28,10 @@
             {/each}
         </div>
 
-        <div class="w-full border-b-1 p-4"></div>
-        <div class="w-full p-4">
+        <Divider />
+
             <p class="w-full text-center">
                 {Data.footer.copyright}
             </p>
-        </div>
     </div>
 </footer>

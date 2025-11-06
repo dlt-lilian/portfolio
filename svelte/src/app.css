@@ -1,13 +1,16 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-@plugin "daisyui";
 
-@plugin "daisyui/theme" {
-    name: "light";
-    default: false;
-    prefersdark: false;
-    color-scheme: "light";
+@plugin "daisyui" {
+    themes: ["light"];
+    darkTheme: "light";
+    base: true;
+    styled: true;
+    utils: true;
+}
+
+@theme {
     --color-base-100: oklch(100% 0 0);
     --color-base-200: oklch(97% 0 0);
     --color-base-300: oklch(94% 0 0);
@@ -37,7 +40,3 @@
     --depth: 0;
     --noise: 0;
 }
-
-
-
-

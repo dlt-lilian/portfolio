@@ -17,7 +17,7 @@
 
         <img src={Data.about.image}
              alt="À propos"
-             class="aspect-[4/3] w-full object-cover rounded-md"
+             class="aspect-[4/3] w-full object-cover rounded-xl"
         />
         <Text type="p">
             {Data.text}
