@@ -6,6 +6,7 @@
     export let weight: 'light' | 'normal' | 'semibold' | 'bold' | 'black' = 'normal';
     export let color: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
     export let bgColor: '' | 'white' | 'primary' | 'success' | 'warning' | 'error' = '';
+    export let underline: boolean = false;
     export let iconLeft: string | null = null;
     export let iconRight: string | null = null;
     export let iconSize: 'xs' | 'sm' | 'md' | 'lg' = 'xs';
@@ -58,7 +59,8 @@
         colorClasses[color],
         bgClasses[bgColor],
         bgColor !== '' ? 'px-2 py-1 rounded-full w-max' : '',
-        (iconLeft || iconRight) ? 'flex items-center gap-2' : ''
+        (iconLeft || iconRight) ? 'flex items-center gap-2' : '',
+        underline ? 'underline underline-offset-2' : ''
     ]
         .filter(Boolean)
         .join(' ');

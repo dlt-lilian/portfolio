@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Text from "$lib/components/ui/Text.svelte";
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Divider from "$lib/components/ui/layout/Divider.svelte";
 
@@ -10,10 +11,13 @@
         <div class="grid grid-cols-3 mx-100">
             {#each Data.footer.columns as column}
                 <div class="">
-                    <h3 class=" w-full text-center">
+                    <Text type="h3"
+                          weight="semibold"
+                          align="center">
                         {column.title}
-                    </h3>
-                    <div class="flex flex-col justify-center">
+                    </Text>
+
+                    <div class="flex flex-col w-max">
                         {#each column.items as item}
                             <Button
                                     link={item.url}
@@ -30,8 +34,9 @@
 
         <Divider />
 
-            <p class="w-full text-center">
-                {Data.footer.copyright}
-            </p>
+        <Text type="p"
+              align="center">
+            {Data.footer.copyright}
+        </Text>
     </div>
 </footer>

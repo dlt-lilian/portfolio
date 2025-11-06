@@ -5,21 +5,21 @@
     import Badge from "$lib/components/ui/actions/Badge.svelte";
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="grid grid-cols-4 gap-8">
 
-    <Text type="h3"
-          size="lg"
-          weight="semibold"
-          class="col-span-4">
-        {Data.about.formation.title}
-    </Text>
+    <div class="text-center space-y-2 col-span-full">
+        <Text type="h2"
+              size="xl"
+              weight="bold">
+            {Data.about.formation.title}
+        </Text>
+    </div>
+
     <!-- Formation Scolaire -->
     <div class="space-y-4">
-
         <Text type="h4">
             {Data.about.formation.scolaire.title}
         </Text>
-
         {#each Data.about.formation.scolaire.items as formation}
             <div class="space-y-2 p-3 bg-gray-50 rounded-xl">
                 <Text type="p"
