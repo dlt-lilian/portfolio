@@ -31,7 +31,7 @@
 
     <form class="space-y-4">
         {#each fields as [key, [label, placeholder]]}
-            <Fieldset legend={label} />
+            <Fieldset legend={label}>
                 {#if key === "message"}
                     <Textarea placeholder={placeholder}
                               required />

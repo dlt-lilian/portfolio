@@ -3,6 +3,7 @@
     import Projects from "$lib/components/ui/Projects.svelte";
     import Skilltree from "$lib/components/ui/Skilltree.svelte";
     import About from "$lib/components/ui/About.svelte";
+    import Learning from "$lib/components/ui/Learning.svelte";
     import Experiences from "$lib/components/ui/experiences.svelte";
     import Contact from "$lib/components/ui/Contact.svelte";
 </script>
@@ -16,8 +17,11 @@
     <!--json a completer-->
     <Skilltree/>
 
-    <!--A refaire-->
-    <About />
+    <!--A refaire ou enlever-->
+    <!--<About />-->
+
+    <!--Learning a faire-->
+    <Learning />
 
     <!--json a completer-->
     <Experiences />

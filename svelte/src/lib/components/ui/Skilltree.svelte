@@ -69,9 +69,9 @@
     </div>
 
     <!-- Conteneur principal avec scroll si nécessaire -->
-    <div class="flex gap-4">
+    <div class="flex grid grid-cols-3 gap-4">
         <!-- Arbre circulaire -->
-        <div class="flex-1">
+        <div class="col-span-2">
             <div bind:this={treeContainer}
                  class="relative w-full aspect-square">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
@@ -170,9 +170,9 @@
         </div>
 
         <!-- Panneau de détails -->
-        <div class="w-full h-max lg:w-80 xl:w-96">
+        <div class="w-full h-max">
             {#if selectedSkill}
-                <div class="bg-white rounded-xl shadow-xl p-4 md:p-6 lg:p-8 h-full animate-fade-in">
+                <div class="bg-white w-full rounded-xl shadow-xl p-4 md:p-6 lg:p-8 h-full animate-fade-in">
                     <div class="flex items-start gap-3 md:gap-4 lg:gap-6">
                         <div class="w-20 h-20 rounded-xl bg-black shadow-xl flex items-center justify-center">
                             {#if selectedSkill.img}
