@@ -1,4 +1,7 @@
 <script>
+
+    import Button from "$lib/components/ui/actions/Button.svelte";
+
     /** @type {'start' | 'center' | 'end'} */
     export let align = 'start';
 
@@ -68,14 +71,11 @@
                         {item.label}
                     </a>
                 {:else}
-                    <button
-                            type="button"
-                            on:click={item.onClick}
+                    <Button on:click={item.onClick}
                             disabled={item.disabled}
-                            class="w-full text-left"
                     >
                         {item.label}
-                    </button>
+                    </Button>
                 {/if}
             </li>
         {/each}

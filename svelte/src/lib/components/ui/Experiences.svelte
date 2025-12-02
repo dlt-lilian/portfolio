@@ -1,6 +1,8 @@
 <script lang="ts">
-    import Data from "$lib/data/Experiences.json" with { type: "json" };
     import Text from "$lib/components/ui/Text.svelte";
+
+    //--- Données ---
+    import Data from "$lib/data/Experiences.json" with { type: "json" };
 
     type Poste = {
         entreprise: string;
@@ -13,8 +15,10 @@
         link?: string;
     };
 
+    //--- Variable d'état ---
     let selectedPoste: Poste | null = null;
 
+    //--- Fonctions ---
     function selectPoste(poste: Poste) {
         selectedPoste = selectedPoste === poste ? null : poste;
     }

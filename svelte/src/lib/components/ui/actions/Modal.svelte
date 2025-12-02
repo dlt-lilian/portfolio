@@ -62,6 +62,6 @@
         <slot />
     </div>
     <form method="dialog" class="modal-backdrop">
-        <button>close</button>
+        <Button>close</Button>
     </form>
 </dialog>

@@ -4,6 +4,8 @@
     import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
     import Input from "$lib/components/ui/input/Input.svelte";
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
+
+    // --- Données ---
     import Data from "$lib/data/Contact.json" with { type: "json" };
 
     const contact = Data.contact;

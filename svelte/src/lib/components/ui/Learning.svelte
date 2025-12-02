@@ -1,10 +1,13 @@
 <script>
-    import Data from "$lib/data/Learning.json";
     import Text from "$lib/components/ui/Text.svelte";
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Icon from "$lib/components/ui/Icon.svelte";
     import Badge from "$lib/components/ui/actions/Badge.svelte";
 
+    // --- Données ---
+    import Data from "$lib/data/Learning.json";
+
+    // --- Variables d'état ---
     let openSchool = false;
     let openPersonal = false;
 </script>
@@ -32,10 +35,10 @@
         {#if openSchool}
             <div class="animate-fade-in space-y-2">
                 {#each Data.school.content as item}
-                    <h4>{item.title}</h4>
-                    <p>{item.name}</p>
+                    <Text type="h4">{item.title}</Text>
+                    <Text type="p">{item.name}</Text>
                     <div>
-                        <span>{item.year}</span>
+                        <Text type="span">{item.year}</Text>
                         <Badge color={
                             item.certif === "obtenu" ? "success" :
                             item.certif === "En cours" ? "info" :
@@ -63,7 +66,7 @@
         {#if openPersonal}
             <div class="animate-fade-in space-y-2">
                 {#each Data.personal.content as item}
-                    <h4>{item.title}</h4>
+                    <Text type="h4">{item.title}</Text>
                 {/each}
             </div>
         {/if}
