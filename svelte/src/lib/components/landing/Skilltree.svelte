@@ -59,7 +59,7 @@
     <div class="text-center space-y-2">
         <Text type="h2"
               size="xl"
-              weight="bold">
+              weight="semibold">
             {data.h2}
         </Text>
         <Text type="p"
