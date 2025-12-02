@@ -59,7 +59,7 @@
                 width="full"
                 on:click={() => openPersonal = !openPersonal}
         >
-            <Text type="h3">{Data.school.title}</Text>
+            <Text type="h3">{Data.personal.title}</Text>
             <Icon name="lucide:chevron-down" rotate={openPersonal} />
         </Button>
 
