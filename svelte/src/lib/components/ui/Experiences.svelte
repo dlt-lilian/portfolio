@@ -2,7 +2,6 @@
     import Data from "$lib/data/Experiences.json" with { type: "json" };
     import Text from "$lib/components/ui/Text.svelte";
 
-    // Type optionnel selon ta structure JSON
     type Poste = {
         entreprise: string;
         poste: string;
@@ -17,7 +16,6 @@
     let selectedPoste: Poste | null = null;
 
     function selectPoste(poste: Poste) {
-        // Si on clique sur la même carte, on referme le panneau
         selectedPoste = selectedPoste === poste ? null : poste;
     }
 </script>
@@ -106,7 +104,6 @@
 </div>
 
 <style>
-    /* petite animation d’apparition */
     .animate-fade-in {
         animation: fadeIn 0.3s ease-in-out;
     }

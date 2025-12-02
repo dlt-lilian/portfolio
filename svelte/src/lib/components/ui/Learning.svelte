@@ -1,25 +1,12 @@
-<script lang="ts">
-    import Data from "$lib/data/Experiences.json" with { type: "json" };
+<script>
+    import Data from "$lib/data/Learning.json";
     import Text from "$lib/components/ui/Text.svelte";
+    import Button from "$lib/components/ui/actions/Button.svelte";
+    import Icon from "$lib/components/ui/Icon.svelte";
+    import Badge from "$lib/components/ui/actions/Badge.svelte";
 
-    // Type optionnel selon ta structure JSON
-    type Poste = {
-        entreprise: string;
-        poste: string;
-        duree: string;
-        periode: string;
-        type: string;
-        description?: string;
-        img?: string;
-        link?: string;
-    };
-
-    let selectedPoste: Poste | null = null;
-
-    function selectPoste(poste: Poste) {
-        // Si on clique sur la même carte, on referme le panneau
-        selectedPoste = selectedPoste === poste ? null : poste;
-    }
+    let openSchool = false;
+    let openPersonal = false;
 </script>
 
 <!-- Titre principal -->
@@ -30,88 +17,72 @@
     {Data.title}
 </Text>
 
-<!-- Grille des cartes -->
-<div class="grid grid-cols-3 gap-4">
-    <div class="grid grid-cols-3 col-span-2 gap-4">
-        {#each Data.postes as items}
-            <div
-                    class="p-4 rounded-xl shadow-xl cursor-pointer transform transition-transform hover:scale-105 bg-white"
-                    on:click={() => selectPoste(items)}>
-                <Text type="h3" size="lg" weight="semibold">
-                    {items.entreprise}
-                </Text>
-                <Text type="p">{items.poste}</Text>
-                <Text type="p">{items.duree}</Text>
-                <Text type="p">{items.periode}</Text>
-                <Text type="p">{items.type}</Text>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 px-4">
+    <!-- Carte Cursus scolaire -->
+    <div class="space-y-5">
+
+        <Button
+                width="full"
+                on:click={() => openSchool = !openSchool}
+        >
+            <Text type="h3">{Data.school.title}</Text>
+            <Icon name="lucide:chevron-down" rotate={openSchool} />
+        </Button>
+
+        {#if openSchool}
+            <div class="animate-fade-in space-y-2">
+                {#each Data.school.content as item}
+                    <h4>{item.title}</h4>
+                    <p>{item.name}</p>
+                    <div>
+                        <span>{item.year}</span>
+                        <Badge color={
+                            item.certif === "obtenu" ? "success" :
+                            item.certif === "En cours" ? "info" :
+                            "error"
+                        }>
+                            {item.certif}
+                        </Badge>
+                    </div>
+                {/each}
             </div>
-        {/each}
+        {/if}
     </div>
 
-    <!-- Panneau de détails -->
-    <div class="">
-        {#if selectedPoste}
-            <div class="bg-white rounded-xl shadow-xl p-6 animate-fade-in">
-                <div class="flex items-start gap-4">
-                    <!-- Image / Logo de l’entreprise -->
-                    <div class="w-20 h-20 rounded-xl bg-black shadow-xl flex items-center justify-center">
-                        {#if selectedPoste.img}
-                            <img
-                                    src={selectedPoste.img}
-                                    alt={selectedPoste.entreprise}
-                                    class="object-contain w-full h-full p-2"
-                            />
-                        {:else}
-                            <Text type="span" color="white" size="xl" weight="semibold">
-                                {selectedPoste.entreprise.charAt(0)}
-                            </Text>
-                        {/if}
-                    </div>
+    <!-- Carte Apprentissage personnel -->
+    <div class="space-y-5">
 
-                    <!-- Détails -->
-                    <div class="flex-1 min-w-0">
-                        <Text type="h3" size="lg" weight="bold">
-                            {selectedPoste.entreprise}
-                        </Text>
-                        <Text type="p" weight="semibold">{selectedPoste.poste}</Text>
-                        <Text type="p">{selectedPoste.periode} — {selectedPoste.duree}</Text>
-                        <Text type="p">{selectedPoste.type}</Text>
+        <Button
+                width="full"
+                on:click={() => openPersonal = !openPersonal}
+        >
+            <Text type="h3">{Data.school.title}</Text>
+            <Icon name="lucide:chevron-down" rotate={openPersonal} />
+        </Button>
 
-                        {#if selectedPoste.description}
-                            <div class="mt-3">
-                                <Text type="p">{selectedPoste.description}</Text>
-                            </div>
-                        {/if}
-
-                        {#if selectedPoste.link}
-                            <a href={selectedPoste.link}
-                               target="_blank"
-                               class="text-blue-600 hover:underline mt-2 inline-block">
-                                Voir plus →
-                            </a>
-                        {/if}
-                    </div>
-                </div>
-            </div>
-        {:else}
-            <div class="bg-white rounded-xl shadow-xl p-6 flex items-center justify-center text-gray-400 animate-fade-in">
-                <Text type="p"
-                      size="sm"
-                      iconLeft={Data.icon}>
-                    {Data.p}
-                </Text>
+        {#if openPersonal}
+            <div class="animate-fade-in space-y-2">
+                {#each Data.personal.content as item}
+                    <h4>{item.title}</h4>
+                {/each}
             </div>
         {/if}
     </div>
 </div>
 
 <style>
-    /* petite animation d’apparition */
-    .animate-fade-in {
-        animation: fadeIn 0.3s ease-in-out;
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+
+    .animate-fade-in {
+        animation: fade-in 0.3s ease-out;
     }
 </style>

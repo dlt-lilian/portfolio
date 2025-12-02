@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
-    export let name: string | null = null;
+    export let name: string;
     export let size: 'xs' | 'sm' | 'md' | 'lg' = 'xs';
     export let color:
         | 'default'
@@ -11,6 +11,7 @@
         | 'success'
         | 'warning'
         | 'error' = 'default';
+    export let rotate: boolean = false;
 
     const variantClasses: Record<typeof color, string> = {
         default: '',
@@ -33,6 +34,8 @@
     $: classes = [
         variantClasses[color],
         sizeClasses[size],
+        'transition-transform duration-300',
+        rotate ? 'rotate-180' : ''
     ]
         .filter(Boolean)
         .join(' ');
