@@ -59,7 +59,7 @@
         colorClasses[color],
         bgClasses[bgColor],
         bgColor !== '' ? 'px-2 py-1 rounded-full w-max' : '',
-        (iconLeft || iconRight) ? 'flex items-center gap-2' : '',
+        (iconLeft || iconRight) ? 'flex items-center justify-center gap-2' : '',
         underline ? 'underline underline-offset-2' : ''
     ]
         .filter(Boolean)
