@@ -1,6 +1,6 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "daisyui": "^5.0.50"
+    "daisyui": "^5.5.14"
   }
 }
