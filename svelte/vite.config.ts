@@ -21,6 +21,9 @@ export default defineConfig({
 			outdir: './src/lib/paraglide'
 		})
 	],
+    preview: {
+        allowedHosts: ['sveltetest-production.up.railway.app'],
+    },
 	test: {
 		expect: { requireAssertions: true },
 		projects: [
