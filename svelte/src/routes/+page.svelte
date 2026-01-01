@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
     import Header from "$lib/components/landing/Header.svelte";
     import Projects from "$lib/components/landing/Projects.svelte";
     import Skilltree from "$lib/components/landing/Skilltree.svelte";
     import Learning from "$lib/components/landing/Learning.svelte";
     import Experiences from "$lib/components/landing/Experiences.svelte";
     import Contact from "$lib/components/landing/Contact.svelte";
+    import Cube from "$lib/3d/cube.svelte"
 </script>
 
+
+
 <div class="space-y-4">
+
+    <Cube/>
 
     <Header />
 
