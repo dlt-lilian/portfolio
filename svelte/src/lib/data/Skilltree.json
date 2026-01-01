@@ -1,0 +1,95 @@
+{
+  "name": "Compétences",
+  "h2": "Compétences",
+  "h4": "Compétences associées:",
+  "icon": "lucide:info",
+  "p": "Cliquez sur une compétence pour voir les détails",
+  "children": [
+    {
+      "name": "Javascript",
+      "img": "/skillicon/js.svg",
+      "children": [
+            {
+              "name": "NextJs",
+              "img": "/skillicon/next.svg",
+              "description": "Framework React moderne pour le rendu côté serveur et les applications web full-stack.",
+              "link": "https://nextjs.org/"
+            },
+            {
+              "name": "Nuxt",
+              "img": "/skillicon/nuxt.svg",
+              "description": "Framework Vue.js pour créer des applications web performantes, universelles et modulaires.",
+              "link": "https://nuxt.com/"
+            },
+            {
+              "name": "Svelte",
+              "img": "/skillicon/svelte.svg",
+              "description": "Framework JavaScript réactif qui compile le code au moment du build pour des performances optimales.",
+              "link": "https://svelte.dev/"
+            },
+            {
+              "name": "Adonis",
+              "img": "/skillicon/adonis.svg",
+              "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+              "link": "https://adonisjs.com/"
+            }
+        ]
+    },
+    {
+      "name": "Frontend",
+      "img": "",
+      "children": [
+        {
+          "name": "Tailwind",
+          "img": "/skillicon/tw.svg",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+        },
+        {
+          "name": "DaisyUi",
+          "img": "/skillicon/daisyui.svg",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "img": "",
+      "children": [
+        {
+          "name": "PostgreSQL",
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+
+        }
+      ]
+    },
+    {
+      "name": "Design",
+      "img": "",
+      "children": [
+        {
+          "name": "Figma",
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+        },
+        {
+          "name": "UI/UX",
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+        },
+
+        {
+          "name": "Photoshop",
+          "img": "./static/favicon",
+          "description": "Framework Node.js inspiré de Laravel, conçu pour bâtir des API et applications web robustes.",
+          "link": "https://adonisjs.com/"
+        }
+      ]
+    }
+  ]
+}

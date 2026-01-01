@@ -1,0 +1,23 @@
+{
+  "contact": {
+    "title": "Contact",
+    "img": "https://picsum.photos/1920/1080"
+  },
+  "form": {
+    "lastname": ["Nom", "Entrez votre nom"],
+    "firstname": ["Prénom", "Entrez votre prénom"],
+    "email": ["Adresse Email", "Entrez votre adresse email"],
+    "company": ["Société", "Entrez le nom de votre société (facultatif)"],
+    "object": ["Objet", "Sujet de votre message"],
+    "message": ["Message", "Votre message ici..."],
+    "link": {
+      "icon": "lucide:info",
+      "link": "/cgu",
+      "text": "En soumettant ce formulaire, j'accepte les conditions ..."
+    },
+    "button": {
+      "icon": "lucide:send",
+      "text": "Envoyer"
+    }
+  }
+}
