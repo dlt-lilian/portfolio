@@ -5,14 +5,9 @@
     import Learning from "$lib/components/landing/Learning.svelte";
     import Experiences from "$lib/components/landing/Experiences.svelte";
     import Contact from "$lib/components/landing/Contact.svelte";
-    import Cube from "$lib/3d/cube.svelte"
 </script>
 
-
-
 <div class="space-y-4">
-
-    <Cube/>
 
     <Header />
 
