@@ -1,40 +1,38 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as THREE from 'three'
+import GLTFLoader from 'gltfloader'
 
-const scene = new THREE.Scene();
+const scene = new THREE.Scene()
 
-const camera = new THREE.PerspectiveCamera(70, iw / ih, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(70, iw / ih)
 
-// Chargement du modèle GLTF
-const loader = new GLTFLoader();
-const gltf = await loader.loadAsync('bibi.glb');
+const mesh = await GLTFLoader.loadObject('bibi2.glb','bibi')
+const texture = await GLTFLoader.loadTexture('bibi.png')
+mesh.children[1].material = new THREE.MeshPhongMaterial({ map:texture,shininess:0 })
 
-const texture = new THREE.TextureLoader().load('bibi.png');
-const material = new THREE.MeshPhongMaterial({ map: texture, shininess:0});
+const light = new THREE.PointLight(0xffffff)
 
-// Appliquer le matériau au modèle chargé
-gltf.scene.traverse((child) => {
-    if (child.isMesh) {
-        child.material = material;
-    }
-});
+scene.add(light)
+scene.add(mesh)
 
-const mesh = gltf.scene;
+camera.position.set(0, 1.2, 3)
+light.position.set(0, 4, 3)
 
-const light = new THREE.PointLight(0xffffff, 100);
+const renderer = new THREE.WebGLRenderer({ canvas })
 
-scene.add(light);
-scene.add(mesh);
+const mixer = new THREE.AnimationMixer( mesh )
+mixer.clipAction( mesh.animations[ 0 ] ).setDuration( 2 ).play()
+mixer.clipAction( mesh.animations[ 1 ] ).setDuration( 2 ).play()
 
-camera.position.set(0, 1.5, 3)
-light.position.set(0, 4, 4)
+let t = 0
+const clock = new THREE.Clock();
 
-const renderer = new THREE.WebGLRenderer({ canvas });
-
-loop();
+loop()
 
 function loop() {
-    requestAnimationFrame(loop);
-    mesh.rotation.y += 0.01;
-    renderer.render(scene, camera);
+    const dt = clock.getDelta();
+    t += dt
+    mixer.update( dt );
+    mesh.rotation.y = Math.cos(t/2)
+    renderer.render(scene, camera)
+    requestAnimationFrame(loop)
 }
