@@ -7,6 +7,7 @@
     import Contact from "$lib/components/landing/Contact.svelte";
     import Editor from "$lib/components/landing/Editor.svelte";
     import ForestHouse from "$lib/3d/ForestHouse/ForestHouse.svelte";
+    import Timeline from "$lib/components/landing/Timeline.svelte";
 </script>
 
 <div class="space-y-4">
@@ -24,11 +25,11 @@
 
     <Projects />
 
-    <!--Learning en cours-->
-    <Learning />
+<!--    &lt;!&ndash;Learning en cours&ndash;&gt;-->
+<!--    <Learning />-->
 
-    <!--json a completer-->
-    <Experiences />
+    <Timeline/>
+<!--    <Experiences />-->
 
     <Contact />
 
