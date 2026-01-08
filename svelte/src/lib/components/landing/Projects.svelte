@@ -8,7 +8,7 @@
 
     //--- Fonction pour transformer les items JSON en objets ---
     const toCarouselItems = (items) =>
-        items.map((item) => ({ image: item.img, title: item.title, alt: item.title}));
+        items.map((item) => ({ image: item.img, title: item.title, alt: item.title, link: item.link }));
 </script>
 
 <Text type="h2"
@@ -24,11 +24,13 @@
         <Text type="h4"
               weight="semibold"
               align="center"
-              iconLeft="lucide:brush">
-            {Data.type[0]}
+              iconLeft={Data.type[0].icon}>
+            {Data.type[0].text}
         </Text>
-        <Carousel items={toCarouselItems(Data.graphic)}
+        <Link to={Data.others.link}>
+        <Carousel items={toCarouselItems(Data.others)}
                   aspect="old"/>
+        </Link>
 
     </div>
 
@@ -37,8 +39,8 @@
         <Text type="h4"
               weight="semibold"
               align="center"
-              iconLeft="lucide:code-xml">
-            {Data.type[1]}
+              iconLeft={Data.type[1].icon}>
+            {Data.type[1].text}
         </Text>
     <Carousel items={toCarouselItems(Data.code)}
               aspect="old"/>

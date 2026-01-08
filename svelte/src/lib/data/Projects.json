@@ -1,7 +1,37 @@
 {
   "title": "Mes projets",
-  "type": ["Graphique", "Code"],
-  "graphic": [
+  "type": [{
+    "text":"Code",
+    "icon": "lucide:code-xml"
+    },{
+    "text":"Autres projets",
+    "icon": "lucide:brush"
+  }],
+
+  "code": [
+    {
+      "title": "Title 1",
+      "text": "Text 1",
+      "img": "https://picsum.photos/1920/1080",
+      "link": "link 1",
+      "label": "label 1"
+    },
+    {
+      "title": "Title 2",
+      "text": "Text 1",
+      "img": "https://picsum.photos/1920/1080",
+      "link": "link 2",
+      "label": "label 2"
+    },
+    {
+      "title": "Title 3",
+      "text": "Text 1",
+      "img": "https://picsum.photos/1920/1080",
+      "link": "link 3",
+      "label": "label 3"
+    }
+  ],
+  "others": [
     {
       "title": "Title 1",
       "text": "Text 1",
@@ -19,26 +49,6 @@
     {
       "title": "Title 3",
       "text": "Text 3",
-      "img": "https://picsum.photos/1920/1080",
-      "link": "link 3",
-      "label": "label 3"
-    }
-  ],
-  "code": [
-    {
-      "title": "Title 1",
-      "img": "https://picsum.photos/1920/1080",
-      "link": "link 1",
-      "label": "label 1"
-    },
-    {
-      "title": "Title 2",
-      "img": "https://picsum.photos/1920/1080",
-      "link": "link 2",
-      "label": "label 2"
-    },
-    {
-      "title": "Title 3",
       "img": "https://picsum.photos/1920/1080",
       "link": "link 3",
       "label": "label 3"

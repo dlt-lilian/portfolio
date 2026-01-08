@@ -2,6 +2,7 @@
     import { onMount, onDestroy } from 'svelte';
     import Icon from "$lib/components/ui/Icon.svelte";
     import Text from "$lib/components/ui/Text.svelte";
+    import Link from "$lib/components/ui/navigation/Link.svelte";
 
     interface CarouselItem {
         id?: string | number;
@@ -117,12 +118,29 @@
             aria-label="Carousel"
     >
         {#each items as item, index (item.id ?? index)}
-            <div class="carousel-item {variant === 'vertical' ? 'h-full' : 'w-full'}" id="slide{index + 1}">
-                <img
-                        src={item.image}
-                        alt={item.alt || `Slide ${index + 1}`}
-                        class={variant === 'vertical' ? 'h-full w-full object-cover' : 'w-full'}
-                />
+            <div
+                    class="carousel-item {variant === 'vertical' ? 'h-full' : 'w-full'}"
+                    id="slide{index + 1}"
+            >
+                {#if item.link}
+                    <Link to={item.link}>
+                        <img
+                                src={item.image}
+                                alt={item.alt || `Slide ${index + 1}`}
+                                class={variant === 'vertical'
+                        ? 'h-full w-full object-cover'
+                        : 'w-full h-full'}
+                        />
+                    </Link>
+                {:else}
+                    <img
+                            src={item.image}
+                            alt={item.alt || `Slide ${index + 1}`}
+                            class={variant === 'vertical'
+                    ? 'h-full w-full object-cover'
+                    : 'w-full'}
+                    />
+                {/if}
             </div>
         {/each}
     </div>
