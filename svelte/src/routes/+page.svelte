@@ -5,16 +5,24 @@
     import Learning from "$lib/components/landing/Learning.svelte";
     import Experiences from "$lib/components/landing/Experiences.svelte";
     import Contact from "$lib/components/landing/Contact.svelte";
+    import Editor from "$lib/components/landing/Editor.svelte";
+    import ForestHouse from "$lib/3d/ForestHouse/ForestHouse.svelte";
 </script>
 
 <div class="space-y-4">
 
-    <Header />
+    <div class="grid grid-cols-2 gap-4">
+    <ForestHouse/>
+    <Editor />
+    </div>
 
-    <Projects />
+<!--    <Header />-->
+
 
     <!--json a completer-->
     <Skilltree/>
+
+    <Projects />
 
     <!--Learning en cours-->
     <Learning />

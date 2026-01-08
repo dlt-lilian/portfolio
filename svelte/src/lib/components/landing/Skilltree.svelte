@@ -29,6 +29,7 @@
     let selectedSkill: Skill | null = null;
     let hoveredSkill: Skill | null = null;
     let containerWidth = 0;
+    let containerHeight = 0;
     let treeContainer: HTMLDivElement;
 
     // --- Fonctions ---
@@ -41,6 +42,7 @@
         const updateSize = () => {
             if (treeContainer) {
                 containerWidth = treeContainer.offsetWidth;
+                containerHeight = treeContainer.offsetHeight;
             }
         };
         updateSize();
@@ -52,6 +54,10 @@
     $: treeSize = Math.min(containerWidth * 0.95, 900);
     $: categoryRadius = treeSize * 0.24;
     $: childRadius = treeSize * 0.15;
+
+    // Calcul du centre en pixels
+    $: centerX = containerWidth / 2;
+    $: centerY = containerHeight / 2;
 </script>
 
 <div class="w-full h-full flex flex-col">
@@ -76,33 +82,62 @@
                  class="relative w-full aspect-square">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <!-- Centre - Nœud racine -->
-
                     <div class="w-30 h-30 rounded-full bg-black shadow-2xl flex items-center justify-center cursor-pointer transform transition-transform hover:scale-110">
                         <Text type="span"
                               color="white"
                               weight="semibold">{data.name}</Text>
                     </div>
                 </div>
-                            <!-- Branches et nœuds principaux -->
-                {#each data.children as category, categoryIndex}
-                    {@const angle = (categoryIndex * 360 / data.children.length) - 90}
-                    {@const categoryX = Math.cos(angle * Math.PI / 180) * categoryRadius}
-                    {@const categoryY = Math.sin(angle * Math.PI / 180) * categoryRadius}
 
-                    <!-- Ligne vers catégorie principale -->
-                    <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: 1;">
+                <!-- SVG pour toutes les lignes -->
+                <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: 1;">
+                    {#each data.children as category, categoryIndex}
+                        {@const angle = (categoryIndex * 360 / data.children.length) - 90}
+                        {@const categoryX = centerX + Math.cos(angle * Math.PI / 180) * categoryRadius}
+                        {@const categoryY = centerY + Math.sin(angle * Math.PI / 180) * categoryRadius}
+
+                        <!-- Ligne vers catégorie principale -->
                         <line
-                                x1="50%"
-                                y1="50%"
-                                x2={`calc(50% + ${categoryX}px)`}
-                                y2={`calc(50% + ${categoryY}px)`}
+                                x1={centerX}
+                                y1={centerY}
+                                x2={categoryX}
+                                y2={categoryY}
                                 stroke="#000000"
                                 stroke-width="2"
                                 stroke-dasharray="4,4"
                                 class="transition-all"
                                 class:opacity-100={hoveredSkill?.name === category.name || selectedSkill?.name === category.name}
                                 class:opacity-30={hoveredSkill && hoveredSkill?.name !== category.name && selectedSkill?.name !== category.name} />
-                    </svg>
+
+                        <!-- Lignes vers compétences enfants -->
+                        {#if category.children}
+                            {#each category.children as skill, skillIndex}
+                                {@const childAngle = angle + (skillIndex - (category.children.length - 1) / 2) * 35}
+                                {@const childX = categoryX + Math.cos(childAngle * Math.PI / 180) * childRadius}
+                                {@const childY = categoryY + Math.sin(childAngle * Math.PI / 180) * childRadius}
+
+                                <line
+                                        x1={categoryX}
+                                        y1={categoryY}
+                                        x2={childX}
+                                        y2={childY}
+                                        stroke="#000000"
+                                        stroke-width="2"
+                                        stroke-dasharray="4,4"
+                                        class="transition-all"
+                                        class:opacity-100={hoveredSkill?.name === category.name || selectedSkill?.name === category.name}
+                                        class:opacity-30={hoveredSkill && hoveredSkill?.name !== category.name && selectedSkill?.name !== category.name}
+                                />
+                            {/each}
+                        {/if}
+                    {/each}
+                </svg>
+
+                <!-- Nœuds -->
+                {#each data.children as category, categoryIndex}
+                    {@const angle = (categoryIndex * 360 / data.children.length) - 90}
+                    {@const categoryX = Math.cos(angle * Math.PI / 180) * categoryRadius}
+                    {@const categoryY = Math.sin(angle * Math.PI / 180) * categoryRadius}
 
                     <!-- Nœud catégorie principale -->
                     <Button
@@ -129,22 +164,6 @@
                             {@const childAngle = angle + (skillIndex - (category.children.length - 1) / 2) * 35}
                             {@const childX = categoryX + Math.cos(childAngle * Math.PI / 180) * childRadius}
                             {@const childY = categoryY + Math.sin(childAngle * Math.PI / 180) * childRadius}
-
-                            <!-- Ligne vers compétence enfant -->
-                            <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" style="z-index: 2;">
-                                <line
-                                        x1={`calc(50% + ${categoryX}px)`}
-                                        y1={`calc(50% + ${categoryY}px)`}
-                                        x2={`calc(50% + ${childX}px)`}
-                                        y2={`calc(50% + ${childY}px)`}
-                                        stroke="#000000"
-                                        stroke-width="2"
-                                        stroke-dasharray="4,4"
-                                        class="transition-all"
-                                        class:opacity-100={hoveredSkill?.name === category.name || selectedSkill?.name === category.name}
-                                        class:opacity-30={hoveredSkill && hoveredSkill?.name !== category.name && selectedSkill?.name !== category.name}
-                                />
-                            </svg>
 
                             <!-- Nœud compétence enfant -->
                             <Button
@@ -216,7 +235,7 @@
                                         {#each selectedSkill.children as child}
                                             <Button
                                                     on:click={() => selectSkill(child)}
-                                                     >
+                                            >
                                                 {child.name}
                                             </Button>
                                         {/each}
