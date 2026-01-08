@@ -17,7 +17,7 @@
     <Editor />
     </div>
 
-<!--    <Header />-->
+    <Header />
 
 
     <!--json a completer-->

@@ -1,35 +1,9 @@
 {
-  "header": {
-    "image": "https://picsum.photos/1920/1080",
-    "title": [
-      "Lilian Dulot",
-      "Développeur Javascript junior & Webdesigner"
-    ],
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-
-  "portfolio": {
-    "graphic": {
-      "image": "https://picsum.photos/1920/1080",
-      "title": "Projets graphiques",
-      "link": "/graphic",
-      "label": "Voir plus"
-    },
-    "code": {
-      "image": "https://picsum.photos/1920/1080",
-      "title": "Projets code",
-      "link": "/code",
-      "label": "Voir plus"
-    }
-  },
-
-  "about": {
-    "title": "À propos",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "image": "https://picsum.photos/1920/1080",
-    "cv": {
-      "label": "Télécharger mon CV",
-      "link": "/static/CV.pdf"
-    }
+  "image": "https://picsum.photos/1920/1080",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "button": {
+    "text": "Github",
+    "icon": "lucide:github",
+    "link": "Coucou"
   }
 }
