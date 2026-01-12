@@ -5,12 +5,16 @@
     import Text from "$lib/components/ui/Text.svelte";
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Skilltree from "$lib/components/landing/Skilltree.svelte";
+    import Contact from "$lib/components/landing/Contact.svelte";
+    import Timeline from "$lib/components/landing/Timeline.svelte";
+    import Projects from "$lib/components/landing/Projects.svelte";
 
     import { gsap } from "gsap";
     import { TextPlugin } from "gsap/TextPlugin";
     import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     import { onMount } from "svelte";
+
 
     gsap.registerPlugin(TextPlugin, ScrambleTextPlugin, ScrollTrigger);
 
@@ -64,8 +68,11 @@
     </div>
 </header>
 
-<div class="relative z-10 bg-white">
+<div class="relative z-10 bg-white space-y-4 mt-10 mb-20 min-h-screen px-100">
     <Skilltree/>
+    <Projects />
+    <Timeline/>
+    <Contact />
 </div>
 
 <style>
