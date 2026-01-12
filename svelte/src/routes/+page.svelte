@@ -9,6 +9,9 @@
     <Header />
 
 <div class="relative z-10 bg-white space-y-4 pt-10 pb-10 min-h-screen px-100">
+    <p>Learning a refaire</p>
+    <p>Experiences a refaire</p>
+    <p>About a refaire</p>
     <Skilltree/>
     <Projects />
     <Timeline/>
