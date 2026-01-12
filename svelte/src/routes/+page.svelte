@@ -6,14 +6,14 @@
     import Experiences from "$lib/components/landing/Experiences.svelte";
     import Contact from "$lib/components/landing/Contact.svelte";
     import Editor from "$lib/components/landing/Editor.svelte";
-    import ForestHouse from "$lib/3d/ForestHouse/ForestHouse.svelte";
     import Timeline from "$lib/components/landing/Timeline.svelte";
+    import Planet from "$lib/3d/Planet/Planet.svelte";
 </script>
 
 <div class="space-y-4">
 
     <div class="grid grid-cols-2 gap-4">
-    <ForestHouse/>
+    <Planet />
     <Editor />
     </div>
 

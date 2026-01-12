@@ -10,80 +10,92 @@ const camera = new THREE.PerspectiveCamera(70, iw / ih, 0.1, 1000);
 
 // Chargement des modèles 3d
 const loader = new GLTFLoader();
-const gltf1 = await loader.loadAsync('planet/planet.glb');
-const gltf2 = await loader.loadAsync('planet/cloud.glb');
-const gltf3 = await loader.loadAsync('planet/moon.glb');
-const gltf4 = await loader.loadAsync('planet/rocket.glb');
-const gltf5 = await loader.loadAsync('planet/rocket_trail.glb');
-const gltf6 = await loader.loadAsync('planet/satellite.glb');
+const planet = await loader.loadAsync('planet/planet.glb');
+const cloud = await loader.loadAsync('planet/cloud.glb');
+const moon = await loader.loadAsync('planet/moon.glb');
+const rocket = await loader.loadAsync('planet/rocket.glb');
+const rocketTrail = await loader.loadAsync('planet/rocket_trail.glb');
+const spoutnik = await loader.loadAsync('planet/spoutnik.glb');
+const astronaut = await loader.loadAsync('planet/astronaut.glb');
 
 
 // Chargement des textures
-const texture1 = new THREE.TextureLoader().load('planet/planet.png');
-const texture3 = new THREE.TextureLoader().load('planet/moon.png');
-const texture4 = new THREE.TextureLoader().load('planet/rocket.png');
-const texture5 = new THREE.TextureLoader().load('planet/rocket_trail.png');
+const planet_texture = new THREE.TextureLoader().load('planet/planet.png');
+const moon_texture = new THREE.TextureLoader().load('planet/moon.png');
+const rocket_texture = new THREE.TextureLoader().load('planet/rocket.png');
+const rocketTrail_texture = new THREE.TextureLoader().load('planet/rocket_trail.png');
+const astronaut_texture = new THREE.TextureLoader().load('planet/astronaut.png');
 
-
-const material1 = new THREE.MeshPhongMaterial({ map: texture1 });
-const material2 = new THREE.MeshPhongMaterial({
+// Creation des materiaux a partir des textures ou de couleurs
+const planet_material = new THREE.MeshPhongMaterial({ map: planet_texture });
+const cloude_material = new THREE.MeshPhongMaterial({
     color: 0xffffff,
     transparent: true,
     opacity: 0.5,
     side: THREE.DoubleSide
 });
-const material3 = new THREE.MeshPhongMaterial({ map: texture3 });
-const material4 = new THREE.MeshPhongMaterial({ map: texture4 });
-const material5 = new THREE.MeshPhongMaterial({ map: texture5 });
-const material6 = new THREE.MeshPhongMaterial({
+const moon_material = new THREE.MeshPhongMaterial({ map: moon_texture });
+const rocket_material = new THREE.MeshPhongMaterial({ map: rocket_texture });
+const rocketTrail_material = new THREE.MeshPhongMaterial({ map: rocketTrail_texture });
+const spoutnik_material = new THREE.MeshPhongMaterial({
     color: 0xffffff,
     transparent: true,
     opacity: 1,
     side: THREE.DoubleSide
 });
+const astronaut_material = new THREE.MeshPhongMaterial({ map: astronaut_texture });
+
 // Appliquer material au modèle
-gltf1.scene.traverse((child) => {
+planet.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material1;
+        child.material = planet_material;
     }
 });
 
-gltf2.scene.traverse((child) => {
+cloud.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material2;
+        child.material = cloude_material;
     }
 });
 
-gltf3.scene.traverse((child) => {
+moon.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material3;
+        child.material = moon_material;
     }
 });
 
-gltf4.scene.traverse((child) => {
+rocket.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material4;
+        child.material = rocket_material;
     }
 });
 
-gltf5.scene.traverse((child) => {
+rocketTrail.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material5;
+        child.material = rocketTrail_material;
     }
 });
 
-gltf6.scene.traverse((child) => {
+spoutnik.scene.traverse((child) => {
     if (child.isMesh) {
-        child.material = material6;
+        child.material = spoutnik_material;
     }
 });
 
-const planetMesh = gltf1.scene;
-const cloudMesh = gltf2.scene;
-const moonMesh = gltf3.scene;
-const rocketMesh = gltf4.scene;
-const rocketTrailMesh = gltf5.scene;
-const satelliteMesh = gltf6.scene;
+astronaut.scene.traverse((child) => {
+    if (child.isMesh) {
+        child.material = astronaut_material;
+    }
+});
+
+// variables pour definir les mesh
+const planetMesh = planet.scene;
+const cloudMesh = cloud.scene;
+const moonMesh = moon.scene;
+const rocketMesh = rocket.scene;
+const rocketTrailMesh = rocketTrail.scene;
+const spoutnikMesh = spoutnik.scene;
+const astronautMesh = astronaut.scene;
 
 // Resize et position des mesh
 cloudMesh.scale.set(0.85, 0.85, 0.85);
@@ -103,11 +115,17 @@ rocketTrailMesh.position.set(0.4, 0.4, 0.4);
 rocketTrailMesh.scale.set(0.02, 0.02, 0.02);
 rocketTrailOrbit.add(rocketTrailMesh);
 
-const satelliteOrbit = new THREE.Group();
-satelliteMesh.scale.set(0.02, 0.02, 0.02);
-satelliteMesh.position.set(0.4, 0.4, 0.7);
-satelliteMesh.rotation.set(0, 1, 0);
-satelliteOrbit.add(satelliteMesh);
+const spoutnikOrbit = new THREE.Group();
+spoutnikMesh.scale.set(0.02, 0.02, 0.02);
+spoutnikMesh.position.set(0.4, 0.4, 0.7);
+spoutnikMesh.rotation.set(0, 1, 0);
+spoutnikOrbit.add(spoutnikMesh);
+
+const astronautOrbit = new THREE.Group();
+astronautMesh.scale.set(0.02, 0.02, 0.02);
+astronautMesh.position.set(0.3, 0.6, 1);
+astronautMesh.rotation.set(0, 0, 0);
+astronautOrbit.add(astronautMesh);
 
 // Lumières
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -122,12 +140,16 @@ scene.add(cloudMesh);
 scene.add(moonOrbit);
 scene.add(rocketOrbit);
 scene.add(rocketTrailOrbit);
-scene.add(satelliteOrbit);
+scene.add(spoutnikOrbit);
+scene.add(astronautOrbit);
 
-
+// Position de la camera
 camera.position.set(0, 1, 1.5);
 
+// Rendu
 const renderer = new THREE.WebGLRenderer({ canvas });
+
+// Permet d'interargir avec la souris
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.target.set(0, 0, 0);
@@ -140,27 +162,31 @@ canvas.style.webkitUserSelect = 'none';
 
 loop();
 
+// Animations
 function loop() {
     requestAnimationFrame(loop);
 
     // Rotation de la planète
     planetMesh.rotation.y -= 0.001;
 
-    // Rotation des nuages (un peu plus rapide pour l'effet)
+    // Rotation des nuages
     cloudMesh.rotation.y -= 0.0015;
 
-    // ✅ Rotation de la lune autour de la planète
-    moonOrbit.rotation.y += 0.005; // Vitesse d'orbite
+    // Rotation de la lune autour de la planète
+    moonOrbit.rotation.y += 0.005;
     moonOrbit.rotation.x += 0.001;
 
-    // ✅ Rotation de la lune sur elle-même (optionnel)
+    // Rotation de la lune sur elle-même
     moonMesh.rotation.y += 0.002;
 
-    // Meme rotation que la planète
+    // Rotation de la fusee
     rocketOrbit.rotation.y -= 0.001;
     rocketTrailOrbit.rotation.y -= 0.001;
 
-    satelliteOrbit.rotation.y -= 0.005;
+    // Rotation de Spoutnik
+    spoutnikOrbit.rotation.y -= 0.005;
+
+    astronautOrbit.rotation.y -= 0.0005;
 
     controls.update();
     renderer.render(scene, camera);
