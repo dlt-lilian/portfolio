@@ -16,7 +16,7 @@
 
 <Header />
 
-<main class="mt-10 mb-10 min-h-screen max-w-6xl mx-auto">
+<main>
     {@render children()}
 </main>
 

@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@iconify/svelte": "^5.1.0",
 		"daisyui": "^5.5.14",
+		"gsap": "^3.14.2",
 		"postgres": "^3.4.7",
 		"svelte-highlight": "^7.9.0",
 		"svelte-vertical-timeline": "^2.0.0",

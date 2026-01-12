@@ -10,7 +10,7 @@
     import Planet from "$lib/3d/Planet/Planet.svelte";
 </script>
 
-<div class="space-y-4">
+<div class="space-y-4 mt-10 mb-10 min-h-screen max-w-6xl mx-auto">
 
     <div class="grid grid-cols-2 gap-4">
     <Planet />
@@ -18,7 +18,6 @@
     </div>
 
     <Header />
-
 
     <!--json a completer-->
     <Skilltree/>
