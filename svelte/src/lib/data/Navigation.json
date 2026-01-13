@@ -12,7 +12,7 @@
     },
     {
       "label": "contact",
-      "url": "#contact",
+      "url": "/#contact",
       "icon": "lucide:message-circle"
     }
   ],
@@ -43,7 +43,7 @@
           },
           {
             "label": "contact",
-            "url": "#contact",
+            "url": "/#contact",
             "icon": "lucide:message-circle"
           }
         ]
