@@ -14,6 +14,7 @@
         | 'ghost' = 'primary';
     export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
     export let width: 'full' | 'col' | 'max' = 'max';
+    export let align: 'left' | 'center' | 'right';
     export let iconLeft: string | null = null;
     export let iconRight: string | null = null;
     export let iconSize: 'xs' | 'sm' | 'md' | 'lg' = 'xs';
@@ -58,11 +59,18 @@
         max: 'w-max'
     };
 
+    const alignClasses:  Record<typeof width, string> = {
+        left: 'text-left',
+        center: 'text-center',
+        right: 'text-right'
+    };
+
     $: classes = [
         'btn',
         variantClasses[variant],
         sizeClasses[size],
         widthClasses[width],
+        alignClasses[align],
         outline ? 'btn-outline' : '',
         wide ? 'btn-wide' : '',
         disabled ? 'btn-disabled' : ''

@@ -24,7 +24,7 @@
         {contact.title}
 </Text>
 
-<div id="contact" class="grid grid-cols-2 gap-4 scroll-mt-32">
+<div id="contact" class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4 scroll-mt-32">
     <div class="space-y-5">
         <img src={contact.img}
              alt="À propos"
@@ -44,10 +44,10 @@
                 {/if}
             </Fieldset>
         {/each}
-
+        
         <Button iconLeft={form.link.icon}
                 variant="link"
-                link={form.link.link}>
+                link={form.link.link} width="full" align="left">
             {form.link.text}
         </Button>
 

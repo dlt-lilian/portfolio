@@ -18,7 +18,7 @@
     {Data.title}
 </Text>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid lg:grid-cols-2 sm:grid-cols-2 gap-4">
     <!-- Carousel pour les items graphic -->
     <div class="space-y-2 w-full">
         <Text type="h4"
