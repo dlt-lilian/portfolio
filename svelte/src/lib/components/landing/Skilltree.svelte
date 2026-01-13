@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import Text from "$lib/components/ui/Text.svelte"
     import Link from "$lib/components/ui/navigation/Link.svelte"
+    import Button from "$lib/components/ui/actions/Button.svelte";
 
     // --- Typage ---
     type Skill = {
@@ -22,7 +23,6 @@
 
     // --- Données ---
     import Data from "$lib/data/Skilltree.json" with {type: "json"};
-    import Button from "$lib/components/ui/actions/Button.svelte";
     const data: SkillsData = Data;
 
     // --- Variables d'état ---
