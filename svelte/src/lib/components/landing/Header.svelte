@@ -42,26 +42,43 @@
     });
 </script>
 
-<header bind:this={headerElement} class="p-10 grid grid-cols-3 gap-4 h-screen bg-black">
-    <div class="col-span-2 h-auto">
+<header bind:this={headerElement}
+        class="relative h-screen bg-black overflow-hidden p-10 grid grid-cols-2 grid-cols-1 gap-4
+               lg:grid-cols-3">
+
+    <!-- SolarSystem -->
+    <div class="col-span-2 h-full
+      absolute inset-0 z-0
+      lg:relative lg:inset-auto lg:z-auto">
         <SolarSystem />
     </div>
-    <div class="flex flex-col place-content-center space-y-5">
+
+    <!-- Texte -->
+    <div class="flex flex-col space-y-5 text-center
+                absolute inset-0 z-10 px-10 items-center justify-center
+                lg:relative lg:z-auto lg:px-0 lg:items-start lg:justify-center lg:text-left">
         <h2 bind:this={typewriterElement}
-            class="text-4xl font-semibold text-white relative">
+            class="text-4xl font-semibold text-white">
             <span class="typewriter-cursor"></span>
         </h2>
 
-        <Text type="p" color="white">
+        <Text type="p"
+              color="white">
             {Data.text}
         </Text>
-        <Button link={Data.button.link}
+
+        <Button
+                link={Data.button.link}
                 iconLeft={Data.button.icon}
-                variant="outline">
+                variant="outline"
+        >
             {Data.button.text}
         </Button>
     </div>
+
+
 </header>
+
 
 <style>
     .typewriter-cursor::after {

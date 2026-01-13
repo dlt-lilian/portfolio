@@ -8,7 +8,7 @@
 
     <Header />
 
-<div class="relative z-10 bg-white space-y-4 pt-10 pb-10 min-h-screen px-100">
+<div class="relative z-10 bg-white space-y-4 pt-10 pb-10 min-h-screen lg:px-100 md:px-16">
     <p>Learning a refaire</p>
     <p>Experiences a refaire</p>
     <p>About a refaire</p>
