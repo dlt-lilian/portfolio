@@ -60,7 +60,7 @@
     $: centerY = containerHeight / 2;
 </script>
 
-<div class="w-full h-full flex flex-col">
+<div class="w-full h-full flex flex-col space-y-4">
     <!-- En-tête -->
     <div class="text-center space-y-2">
         <Text type="h2"
@@ -75,7 +75,8 @@
     </div>
 
     <!-- Conteneur principal avec scroll si nécessaire -->
-    <div class="flex grid grid-cols-3 gap-4">
+    <div class="flex flex-col-reverse space-y-4
+                lg:grid lg:gap-4 lg:grid-cols-3">
         <!-- Arbre circulaire -->
         <div class="col-span-2">
             <div bind:this={treeContainer}
