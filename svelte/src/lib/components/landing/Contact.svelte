@@ -16,15 +16,15 @@
     );
 </script>
 
-<Text
-        type="h2"
-        size="xl"
-        weight="semibold"
-        align="center">
-    {contact.title}
+
+<Text type="h2"
+      size="xl"
+      weight="semibold"
+      align="center">
+        {contact.title}
 </Text>
 
-<div class="grid grid-cols-2 gap-4">
+<div id="contact" class="grid grid-cols-2 gap-4 scroll-mt-32">
     <div class="space-y-5">
         <img src={contact.img}
              alt="À propos"
