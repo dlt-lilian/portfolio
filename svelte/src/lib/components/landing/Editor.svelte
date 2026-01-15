@@ -19,7 +19,7 @@
     {@html dracula}
 </svelte:head>
 
-<div class=" rounded-xl bg-[#282a36] shadow-2xl overflow-hidden border border-gray-700/50 aspect-[4/3]">
+<div class="rounded-xl bg-[#282a36] shadow-2xl overflow-hidden border border-gray-700/50 aspect-[4/3]">
     <!-- Header -->
     <div class="flex items-center justify-between px-4 py-3 bg-[#21222c] border-b border-gray-700/50">
         <div class="flex items-center gap-2">
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Code content -->
-    <div class="text-sm">
+    <div class="text-sm overflow-x-auto break-words">
         <Highlight {language} {code} let:highlighted>
             {#if showLineNumbers}
                 <LineNumbers {highlighted} hideBorder />

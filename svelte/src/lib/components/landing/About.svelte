@@ -1,28 +1,24 @@
 <script>
-    import Data from "$lib/data/Presentation.json" with { type: "json" };
-
-    import Button from "$lib/components/ui/actions/Button.svelte";
+    import data from "$lib/data/About.json" with { type: "json" };
     import Text from "$lib/components/ui/Text.svelte";
+    import Editor from "$lib/components/landing/Editor.svelte";
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-    <img src={Data.about.image}
-         alt="À propos"
-         class="aspect-[4/3] w-full object-cover rounded-xl"
-    />
+<Text type="h2"
+      size="xl"
+      weight="semibold"
+      align="center">
+    {data.title}
+</Text>
 
-    <div class="md:col-span-3 flex flex-col justify-between">
-        <Text type="h2"
-              size="xl"
-              weight="semibold">
-            {Data.about.title}
-        </Text>
-        <Text type="p">
-            {Data.about.text}
-        </Text>
+<article class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-4">
 
-        <Button link={Data.about.cv.link}>
-            {Data.about.cv.label}
-        </Button>
+    <Editor/>
+
+    <div class="space-y-4">
+        <Text type="h4" size="lg" weight="semibold">{data.secondtitle}</Text>
+        {#each data.text as item}
+            <Text type="p">{item}</Text>
+        {/each}
     </div>
-</div>
+</article>
