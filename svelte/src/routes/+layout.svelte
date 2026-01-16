@@ -10,8 +10,13 @@
 
 <svelte:head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href={favicon} />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1" />
+    <link rel="icon"
+          href={favicon} />
+    <title>Lilian Dulot</title>
+    <meta name="description"
+          content="Développeur web JavaScript junior" />
 </svelte:head>
 
 <Header />

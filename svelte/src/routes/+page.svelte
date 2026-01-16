@@ -8,12 +8,6 @@
     import About from "$lib/components/landing/About.svelte";
 </script>
 
-<svelte:head>
-    <title>Accueil</title>
-    <meta name="accueil"
-          content="Développeur web JavaScript junior" />
-</svelte:head>
-
     <Header />
 
 <div class="relative z-10 bg-white space-y-4 pt-10 pb-10 min-h-screen lg:px-100 md:px-16 px-5">
