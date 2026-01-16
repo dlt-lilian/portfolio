@@ -98,9 +98,9 @@ const spoutnikMesh = spoutnik.scene;
 const astronautMesh = astronaut.scene;
 
 // Resize et position des mesh
-planetMesh.scale.set(0.068, 0.068, 0.068)
+planetMesh.scale.set(0.68, 0.68, 0.68)
 cloudMesh.scale.set(0.85, 0.85, 0.85);
-moonMesh.scale.set(0.01, 0.01, 0.01)
+moonMesh.scale.set(0.1, 0.1, 0.1)
 
 const moonOrbit = new THREE.Group();
 moonMesh.position.set(1, 0, 0);
