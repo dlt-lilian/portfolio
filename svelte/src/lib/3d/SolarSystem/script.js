@@ -12,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(70, iw / ih, 0.1, 1000);
 const loader = new GLTFLoader();
 const planet = await loader.loadAsync('planet/planet.glb');
 const cloud = await loader.loadAsync('planet/cloud.glb');
-const moon = await loader.loadAsync('planet/moon.glb');
+const moon = await loader.loadAsync('planet/planet.glb');
 const rocket = await loader.loadAsync('planet/rocket.glb');
 const rocketTrail = await loader.loadAsync('planet/rocket_trail.glb');
 const spoutnik = await loader.loadAsync('planet/spoutnik.glb');
@@ -98,7 +98,7 @@ const spoutnikMesh = spoutnik.scene;
 const astronautMesh = astronaut.scene;
 
 // Resize et position des mesh
-
+planetMesh.scale.set(0.068, 0.068, 0.068)
 cloudMesh.scale.set(0.85, 0.85, 0.85);
 moonMesh.scale.set(0.01, 0.01, 0.01)
 
