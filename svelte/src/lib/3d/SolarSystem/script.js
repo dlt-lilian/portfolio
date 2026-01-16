@@ -98,6 +98,7 @@ const spoutnikMesh = spoutnik.scene;
 const astronautMesh = astronaut.scene;
 
 // Resize et position des mesh
+
 cloudMesh.scale.set(0.85, 0.85, 0.85);
 moonMesh.scale.set(0.01, 0.01, 0.01)
 
