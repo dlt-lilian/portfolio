@@ -43,7 +43,7 @@
         warning: 'btn-warning',
         error: 'btn-error',
         ghost: 'btn-ghost',
-        link: 'btn-link p-0',
+        link: 'btn-link',
     };
 
     const sizeClasses: Record<typeof size, string> = {
