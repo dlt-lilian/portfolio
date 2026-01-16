@@ -5,7 +5,7 @@
     import {ScrollTrigger} from "gsap/ScrollTrigger";
     import {onMount} from "svelte";
 
-    import Data from "$lib/data/Presentation.json";
+    import data from "$lib/data/Presentation.json";
 
     import SolarSystem from "$lib/3d/SolarSystem/SolarSystem.svelte";
     import Text from "$lib/components/ui/Text.svelte";
@@ -16,7 +16,7 @@
     let headerElement: HTMLElement;
     let typewriterElement: HTMLHeadingElement;
 
-    const typewriterText = Data.name;
+    const typewriterText = data.name;
 
     onMount(() => {
         ScrollTrigger.create({
@@ -64,15 +64,15 @@
 
         <Text type="p"
               color="white">
-            {Data.text}
+            {data.text}
         </Text>
 
         <Button
-                link={Data.button.link}
-                iconLeft={Data.button.icon}
+                link={data.button.link}
+                iconLeft={data.button.icon}
                 variant="outline"
         >
-            {Data.button.text}
+            {data.button.text}
         </Button>
     </div>
 

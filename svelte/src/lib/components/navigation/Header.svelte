@@ -1,6 +1,6 @@
 <script>
     import Button from "$lib/components/ui/actions/Button.svelte";
-    import Data from "$lib/data/Navigation.json" with { type: "json" };
+    import data from "$lib/data/Navigation.json" with { type: "json" };
     import { onMount } from "svelte";
 
     let isScrolled = $state(false);
@@ -24,7 +24,7 @@
 </script>
 
 <div class="navbar justify-center space-x-2 shadow-xl sticky top-0 z-[100] transition-colors duration-300 {isScrolled ? 'bg-white' : 'bg-black'}">
-    {#each Data.navbar as item}
+    {#each data.navbar as item}
         {#if isScrolled}
             <Button
                     link={item.url}

@@ -3,13 +3,13 @@
     import Button from "$lib/components/ui/actions/Button.svelte";
     import Divider from "$lib/components/ui/layout/Divider.svelte";
 
-    import Data from "$lib/data/Navigation.json" with { type: "json" };
+    import data from "$lib/data/Navigation.json" with { type: "json" };
 </script>
 
 <footer class="flex justify-center bg-gray-100 p-5">
     <div class="w-full">
         <div class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 lg:px-100 md:px-16 px-5">
-            {#each Data.footer.columns as column}
+            {#each data.footer.columns as column}
                 <div class="mb-5">
                     <Text type="h3"
                           weight="semibold"
@@ -52,7 +52,7 @@
 
         <Text type="p"
               align="center">
-            {Data.footer.copyright}
+            {data.footer.copyright}
         </Text>
     </div>
 </footer>

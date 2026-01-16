@@ -6,10 +6,10 @@
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
 
     // --- Données ---
-    import Data from "$lib/data/Contact.json" with { type: "json" };
+    import data from "$lib/data/Contact.json" with { type: "json" };
 
-    const contact = Data.contact;
-    const form = Data.form;
+    const contact = data.contact;
+    const form = data.form;
 
     const fields = Object.entries(form).filter(
         ([key, value]) => Array.isArray(value)

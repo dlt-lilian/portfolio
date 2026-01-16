@@ -5,7 +5,7 @@
     import Badge from "$lib/components/ui/actions/Badge.svelte";
 
     // --- Données ---
-    import Data from "$lib/data/Learning.json";
+    import data from "$lib/data/Learning.json";
 
     // --- Variables d'état ---
     let openSchool = false;
@@ -17,7 +17,7 @@
       size="xl"
       weight="semibold"
       align="center">
-    {Data.title}
+    {data.title}
 </Text>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 px-4">
@@ -28,13 +28,13 @@
                 width="full"
                 on:click={() => openSchool = !openSchool}
         >
-            <Text type="h3">{Data.school.title}</Text>
+            <Text type="h3">{data.school.title}</Text>
             <Icon name="lucide:chevron-down" rotate={openSchool} />
         </Button>
 
         {#if openSchool}
             <div class="animate-fade-in space-y-2">
-                {#each Data.school.content as item}
+                {#each data.school.content as item}
                     <Text type="h4">{item.title}</Text>
                     <Text type="p">{item.name}</Text>
                     <div>
@@ -59,13 +59,13 @@
                 width="full"
                 on:click={() => openPersonal = !openPersonal}
         >
-            <Text type="h3">{Data.personal.title}</Text>
+            <Text type="h3">{data.personal.title}</Text>
             <Icon name="lucide:chevron-down" rotate={openPersonal} />
         </Button>
 
         {#if openPersonal}
             <div class="animate-fade-in space-y-2">
-                {#each Data.personal.content as item}
+                {#each data.personal.content as item}
                     <Text type="h4">{item.title}</Text>
                 {/each}
             </div>

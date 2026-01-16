@@ -2,7 +2,7 @@
     import Text from "$lib/components/ui/Text.svelte";
 
     //--- Données ---
-    import Data from "$lib/data/Experiences.json" with { type: "json" };
+    import data from "$lib/data/Experiences.json" with { type: "json" };
 
     type Poste = {
         entreprise: string;
@@ -29,13 +29,13 @@
       size="xl"
       weight="semibold"
       align="center">
-    {Data.title}
+    {data.title}
 </Text>
 
 <!-- Grille des cartes -->
 <div class="grid grid-cols-3 gap-4">
     <div class="grid grid-cols-3 col-span-2 gap-4">
-        {#each Data.postes as items}
+        {#each data.postes as items}
             <div
                     class="p-4 rounded-xl shadow-xl cursor-pointer transform transition-transform hover:scale-105 bg-white"
                     on:click={() => selectPoste(items)}>
@@ -99,8 +99,8 @@
             <div class="bg-white rounded-xl shadow-xl p-6 flex items-center justify-center text-gray-400 animate-fade-in">
                 <Text type="p"
                       size="sm"
-                      iconLeft={Data.icon}>
-                    {Data.p}
+                      iconLeft={data.icon}>
+                    {data.p}
                 </Text>
             </div>
         {/if}

@@ -3,7 +3,7 @@
     import Carousel from "$lib/components/ui/display/Carousel.svelte";
 
     // --- Données ---
-    import Data from "$lib/data/Projects.json" with { type: "json" };
+    import data from "$lib/data/Projects.json" with { type: "json" };
     import Link from "$lib/components/ui/navigation/Link.svelte";
 
     //--- Fonction pour transformer les items JSON en objets ---
@@ -15,7 +15,7 @@
       size="xl"
       weight="semibold"
       align="center">
-    {Data.title}
+    {data.title}
 </Text>
 
 <div class="grid lg:grid-cols-2 sm:grid-cols-2 gap-4">
@@ -24,11 +24,11 @@
         <Text type="h4"
               weight="semibold"
               align="center"
-              iconLeft={Data.type[0].icon}>
-            {Data.type[0].text}
+              iconLeft={data.type[0].icon}>
+            {data.type[0].text}
         </Text>
-        <Link to={Data.others.link}>
-        <Carousel items={toCarouselItems(Data.others)}
+        <Link to={data.others.link}>
+        <Carousel items={toCarouselItems(data.others)}
                   aspect="old"/>
         </Link>
 
@@ -39,10 +39,10 @@
         <Text type="h4"
               weight="semibold"
               align="center"
-              iconLeft={Data.type[1].icon}>
-            {Data.type[1].text}
+              iconLeft={data.type[1].icon}>
+            {data.type[1].text}
         </Text>
-    <Carousel items={toCarouselItems(Data.code)}
+    <Carousel items={toCarouselItems(data.code)}
               aspect="old"/>
     </div>
 </div>

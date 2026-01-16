@@ -1,5 +1,5 @@
 <script>
-    import Data from "$lib/data/Experiences.json";
+    import data from "$lib/data/Experiences.json";
     import Text from "$lib/components/ui/Text.svelte";
 
     import {
@@ -17,25 +17,25 @@
       size="xl"
       weight="semibold"
       align="center">
-    {Data.title}
+    {data.title}
 </Text>
 
 <Timeline position="right" direction="column">
-    {#each Data.postes as items}
+    {#each data.postes as items}
         <TimelineItem>
             <TimelineOppositeContent slot="opposite-content">
-                <p>{items.periode}</p>
-                <p>{items.duree}</p>
+                <Text type="p">{items.periode}</Text>
+                <Text type="p">{items.duree}</Text>
             </TimelineOppositeContent>
             <TimelineSeparator>
                 <TimelineDot/>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-                <p>{items.poste}</p>
-                <p>{items.entreprise}</p>
-                <p>{items.type}</p>
-                <p>{items.status}</p>
+                <Text type="p">{items.poste}</Text>
+                <Text type="p">{items.entreprise}</Text>
+                <Text type="p">{items.type}</Text>
+                <Text type="p">{items.status}</Text>
             </TimelineContent>
         </TimelineItem>
     {/each}

@@ -15,7 +15,6 @@
 
     <p>Learning a refaire</p>
     <p>Experiences a refaire</p>
-    <p>About a refaire</p>
 
     <div class="hidden md:block" >
         <Skilltree />

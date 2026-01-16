@@ -251,8 +251,8 @@
                     <div class="text-center text-gray-400 flex gap-2">
                         <Text type="p"
                               size="sm"
-                              iconLeft={Data.icon}>
-                            {Data.p}
+                              iconLeft={data.icon}>
+                            {data.p}
                         </Text>
                     </div>
                 </div>
