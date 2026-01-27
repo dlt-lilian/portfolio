@@ -4,16 +4,57 @@
     import Fieldset from "$lib/components/ui/input/Fieldset.svelte";
     import Input from "$lib/components/ui/input/Input.svelte";
     import Textarea from "$lib/components/ui/input/Textarea.svelte";
+    import Icon from "$lib/components/ui/Icon.svelte";
 
     // --- Données ---
     import Data from "$lib/data/Contact.json" with { type: "json" };
 
     const contact = Data.contact;
     const form = Data.form;
+    const tsuccess = Data.toast.success;
+    const terror = Data.toast.error;
 
     const fields = Object.entries(form).filter(
         ([key, value]) => Array.isArray(value)
     );
+
+    let success = false;
+    let loading = false;
+    let error = false;
+
+    async function handleSubmit(event: SubmitEvent) {
+        event.preventDefault();
+
+        loading = true;
+        success = false;
+        error = false;
+
+        const formElement = event.currentTarget as HTMLFormElement;
+        const formData = new FormData(formElement);
+
+        try {
+            const response = await fetch(
+                "https://formsubmit.co/dulotlilian@gmail.com",
+                {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json"
+                    }
+                }
+            );
+
+            if (!response.ok) throw new Error("Erreur FormSubmit");
+
+            success = true;
+            formElement.reset();
+        } catch (e) {
+            error = true;
+        } finally {
+            loading = false;
+        }
+    }
+
 </script>
 
 
@@ -31,29 +72,58 @@
              class="w-full h-full object-cover rounded-xl" />
     </div>
 
-    <form class="space-y-4">
+    <form
+            class="space-y-4"
+            on:submit={handleSubmit}
+    >
+        <!-- Options FormSubmit -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_subject" value="Nouveau message - Contact" />
+
         {#each fields as [key, [label, placeholder]]}
             <Fieldset legend={label}>
                 {#if key === "message"}
-                    <Textarea placeholder={placeholder}
-                              required />
+                    <Textarea name={key} placeholder={placeholder} required />
                 {:else}
-                    <Input placeholder={placeholder}
-                           type={key === "email" ? "email" : "text"}
-                           required={key !== "company"} />
+                    <Input
+                            name={key}
+                            placeholder={placeholder}
+                            type={key === "email" ? "email" : "text"}
+                            required={key !== "company"}
+                    />
                 {/if}
             </Fieldset>
         {/each}
-        
-        <Button iconLeft={form.link.icon}
-                variant="link"
-                link={form.link.link} width="full" align="left">
-            {form.link.text}
+
+        <Button width="full" type="submit" disabled={loading}>
+            {#if loading}
+                <span class="loading loading-spinner loading-md"></span>
+            {:else}
+                {form.button.text}
+            {/if}
         </Button>
 
-        <Button width="full"
-                iconLeft={form.button.icon}>
-            {form.button.text}
-        </Button>
     </form>
 </div>
+
+{#if success}
+    <div class="toast toast-bottom toast-end z-50">
+        <div class="alert alert-success flex space-x-2 items-center justify-center">
+            <Text iconLeft={tsuccess.icon}>
+                {tsuccess.text}
+            </Text>
+        </div>
+    </div>
+{/if}
+
+{#if error}
+    <div class="toast toast-bottom toast-end z-50">
+        <div class="alert alert-error flex">
+            <Text iconLeft={terror.icon}>
+                {terror.text}
+            </Text>
+        </div>
+    </div>
+{/if}
+

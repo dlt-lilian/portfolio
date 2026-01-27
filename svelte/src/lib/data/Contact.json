@@ -19,5 +19,15 @@
       "icon": "lucide:send",
       "text": "Envoyer"
     }
+  },
+  "toast": {
+    "success": {
+      "icon": "lucide:mail-check",
+      "text": "Message envoyé avec succès"
+    },
+    "error": {
+      "icon": "lucide:mail-x",
+      "text": "Une erreur est survenue"
+    }
   }
 }
